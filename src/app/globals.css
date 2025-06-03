@@ -20,12 +20,16 @@ body {
   font-weight: 300;
   src: local('Aero'), url('https://fonts.cdnfonts.com/s/62901/Aero.woff') format('woff');
 }
-/* @font-face {
-  font-family: 'Pastella Autography';
- 
-  src: local('Pastella Autography'), url('https://fonts.cdnfonts.com/css/pastella-autography.woff') format('woff');
-} */
-
+@font-face {
+  font-family: 'Autography';
+  src: url('/public/font/Autography.otf') format('opentype'); /* Correct format */
+  font-weight: normal;
+  font-style: normal;
+}
+.phd {
+  font-family: 'Autography', sans-serif;
+  letter-spacing: 5px;
+}
 .hero-hd {
   font-family: 'Aero', sans-serif;
   letter-spacing: 5px;
@@ -41,6 +45,7 @@ font-family: 'Pastella Autography';
 :root {
   --header-height: 104px;
 }
+
 
 .section-one {
   background-image: url("/assets/images/hero-section-background.png");

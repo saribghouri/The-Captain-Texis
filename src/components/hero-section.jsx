@@ -3,9 +3,9 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div className="relative min-h-screen w-full bg-contain  bg-no-repeat overflow-hidden" style={{ backgroundImage: "url('/assets/images/BG-MAIN.jfif')" }}>
+    <div className="relative min-h-screen w-full bg-contain  bg-no-repeat overflow-hidden" style={{ backgroundImage: "url('/assets/images/106269f2-c7aa-41e5-9dca-ab84438ef660.jfif')" }}>
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-4 lg:px-2">
-        <div className="w-full max-w-[90%] flex flex-col  lg:flex-row items-center">
+        <div className="w-full max-w-[90%] mt-[-50px] flex flex-col  lg:flex-row items-center">
           <div className="w-full lg:w-2/2 text-center lg:text-left">
             {/* Main heading */}
             <h1 className="text-4xl sm:text-5xl hero-hd md:text-[77px] lg:text-[77px] xl:text-[77px] [1080px]:text-[60px] font-extrabold leading-tight">              <span className="text-black">The </span>
@@ -52,11 +52,11 @@ const HeroSection = () => {
             </div>
 
             {/* Call to action */}
-            <div className="mt-10 sm:mt-12 lg:mt-22 flex flex-col gap-4 items-center lg:items-start">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl autography text-[#5b3a8b] font-bold font-sans">
-                Start Your Journey
+            <div className="mt-10 sm:mt-12 lg:mt-16 flex flex-col gap-4 items-center lg:items-start">
+              <h2 className="text-2xl  sm:text-3xl lg:text-4xl  text-[#5b3a8b] font-bold font-sans">
               </h2>
-              <div className="flex flex-col sm:flex-row gap-4 mt-[30px]">
+            <img className="w-[300px] " src="assets/images/RKwJVV.png" alt="" />
+              <div className="flex flex-col sm:flex-row gap-4 mt-[20px]">
                 <Button
                   className="!bg-[#4d2d7c] !rounded-[8px] !font-bold !text-white !text-base sm:!text-lg lg:!text-xl !px-8 sm:!px-8 !py-6 sm:!py-6"
                 >
