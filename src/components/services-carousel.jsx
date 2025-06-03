@@ -55,7 +55,7 @@ const ServicesSection = () => {
                 src="assets/images/app.png"
                 alt="Ride app mockup"
 
-                className="  lg:w-[719px] xl:w-[1519px] [1080px]:w-[719px]"
+                className="  lg:w-[719px] xl:w-[1519px] [1080px]:w-[919px]"
                 priority
               />
             </div>
