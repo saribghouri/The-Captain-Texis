@@ -50,12 +50,12 @@ const ServicesSection = () => {
         <div className="flex flex-col md:flex-row w-full items-center justify-between gap-8  md:gap-40">
           {/* Phone mockups */}
           <div className="relative w-full md:w-1/2 h-[400px] md:h-[500px]">
-            <div className="absolute left-[-30px] top-1/2 -translate-y-1/2 z-10">
+            <div className="absolute  top-1/2 -translate-y-1/2 z-10">
               <img
                 src="assets/images/app.png"
                 alt="Ride app mockup"
 
-                className=" max-w-[919px]"
+                className=" max-w-[919px]  lg:w-[719px] xl:w-[919px] [1080px]:w-[719px]"
                 priority
               />
             </div>

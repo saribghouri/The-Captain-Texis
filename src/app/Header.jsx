@@ -260,7 +260,7 @@ const Header = () => {
       {/* Nav bar - Hidden on mobile */}
       <div className="hidden md:block bg-white  shadow-md">
         <div className=" mx-auto  md:px-8 lg:px-8 py-4">
-          <div className="flex w-full px-10 justify-between ">
+          <div className="flex w-full  justify-between ">
             {/* Left side navigation */}
             <div className="flex items-center space-x-1">
               <img className="w-[120px] mr-[75px]" src="assets/images/Logo1.png" alt="" />

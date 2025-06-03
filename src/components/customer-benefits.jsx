@@ -5,7 +5,7 @@ export default function CustomerBenefits() {
     <div className="max-w-[100%] mx-auto ">
     
 
-     <section className="py-16 px-8 bg-gray-50">
+     <section className="py-16 px-8 ">
       <div className="max-w-[90%] mx-auto">
         {/* Heading */}
         <div className="text-center mb-12">
