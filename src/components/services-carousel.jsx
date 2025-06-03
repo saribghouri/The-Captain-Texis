@@ -49,7 +49,7 @@ const ServicesSection = () => {
       <div className=" mx-auto px-4 py-16 md:py-24">
         <div className="flex flex-col md:flex-row w-full items-center justify-between gap-8  md:gap-40">
           {/* Phone mockups */}
-          <div className="relative w-full md:w-[60%] h-[400px] md:h-[500px]">
+          <div className="relative w-full md:w-[50%] h-[400px] md:h-[500px]">
             <div className="absolute  top-1/2 -translate-y-1/2 z-10">
               <img
                 src="assets/images/app.png"
