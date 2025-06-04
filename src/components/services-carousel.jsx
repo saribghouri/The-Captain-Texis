@@ -54,7 +54,7 @@ const ServicesSection = () => {
             <img
               src="assets/images/app.png"
               alt="Ride app mockup"
-              className="w-full max-w-[919px]  mx-auto"
+              className="w-full max-w-[919px] xl:w-[770px]  mx-auto"
               priority
             />
           </div>
