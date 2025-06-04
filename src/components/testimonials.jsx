@@ -131,52 +131,78 @@ export default function TaxiServiceSection() {
         </div>
 
         {/* Main Content */}
-        <div className="bg-white relative rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="bg-white relative rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 shadow-sm border border-gray-100">
+          <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-center">
             {/* Left Content */}
             <div
               className={`transition-all duration-300 ${isTransitioning ? "opacity-0 translate-x-4" : "opacity-100 translate-x-0"}`}
             >
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-2 ">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 mb-1 sm:mb-2">
                 {currentVehicle.title}
               </h1>
-              <h2 className="text-4xl md:text-6xl  font-bold text-purple-900 mb-6 md:mb-8 leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-purple-900 mb-4 sm:mb-6 lg:mb-8 leading-tight">
                 {currentVehicle.subtitle}
               </h2>
 
-              <p className="text-base md:text-[30px] text-[##2B0B3D] max-w-[85%] mb-8 leading-relaxed">{currentVehicle.description}</p>
+              <p className="text-sm sm:text-base md:text-lg lg:text-[30px] text-[#2B0B3D]  mb-4 sm:mb-6 lg:mb-8 leading-relaxed">
+                {currentVehicle.description}
+              </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
                 <button
-                  className="bg-[#4d2d7c] cursor-pointer !hover:bg-purple-900 !text-white !px-10 py-3 !text-[22px] !font-medium !rounded-lg"
-                  size="lg"
+                  className="bg-[#4d2d7c] cursor-pointer text-white font-medium rounded-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-[4px] xl:py-[20px] text-sm sm:text-lg lg:text-[16px] xl:text-[22px]  w-full sm:w-auto"
                 >
                   {currentVehicle.primaryButton}
                 </button>
                 <button
                   variant="outline"
-                  className="border border-[#4d2d7c] cursor-pointer !hover:bg-purple-900 !text-[#4d2d7c]  !px-10 py-3 !text-[22px] !font-medium !rounded-lg"
-                  size="lg"
+                  className="border border-[#4d2d7c] cursor-pointer text-[#4d2d7c] font-medium rounded-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-[4px] xl:py-[20px] text-sm sm:text-lg lg:text-[16px] xl:text-[22px]  w-full sm:w-auto"
                 >
                   {currentVehicle.secondaryButton}
                 </button>
               </div>
 
               {/* Bottom Navigation Arrows */}
-              <div className="flex gap-4">
+              <div className="flex gap-3 sm:gap-4">
                 <button
                   onClick={handlePrevious}
-                  className="w-12 h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
                   disabled={isTransitioning}
                 >
-                  <ChevronLeft className="w-7 h-7 text-black" />
+                  <svg
+                    className="w-5 h-5 sm:w-7 sm:h-7 text-black"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M15 19l-7-7 7-7"
+                    />
+                  </svg>
                 </button>
                 <button
                   onClick={handleNext}
-                  className="w-12 h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
                   disabled={isTransitioning}
                 >
-                  <ChevronRight className="w-7 h-7 text-black" />
+                  <svg
+                    className="w-5 h-5 sm:w-7 sm:h-7 text-black"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
                 </button>
               </div>
             </div>
@@ -189,7 +215,7 @@ export default function TaxiServiceSection() {
                 <img
                   src={currentVehicle.contentImage || "/placeholder.svg"}
                   alt={currentVehicle.subtitle}
-                  className="w-full h-auto rounded-4xl"
+                  className="w-full h-auto rounded-2xl sm:rounded-3xl lg:rounded-4xl"
                 />
               </div>
             </div>
