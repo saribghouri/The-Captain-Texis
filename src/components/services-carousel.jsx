@@ -50,7 +50,7 @@ const ServicesSection = () => {
       <div className="flex flex-col md:flex-row w-full xl:flex-row sm:flex-col   lg:justify-center items-center justify-between gap-8 md:gap-12 lg:gap-40">
         {/* Phone mockups */}
         <div className="relative w-full md:w-[50%] h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px]">
-          <div className="absolute top-1/2 -translate-y-1/2  z-10 w-full">
+          <div className="absolute top-1/2 -translate-y-1/2 lg:flex lg:flex-col lg:justify-center z-10 w-full">
             <img
               src="assets/images/app.png"
               alt="Ride app mockup"
