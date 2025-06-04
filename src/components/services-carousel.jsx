@@ -47,14 +47,14 @@ const ServicesSection = () => {
   return (
     <div className="relative w-full overflow-hidden px-[50px] bg-white">
       <div className="mx-auto  py-16 md:py-24 bg-white">
-      <div className="flex flex-col md:flex-row w-full items-center justify-between gap-8 md:gap-12 lg:gap-40">
+      <div className="flex flex-col md:flex-row w-full xl:flex-row sm:flex-col   lg:justify-center items-center justify-between gap-8 md:gap-12 lg:gap-40">
         {/* Phone mockups */}
         <div className="relative w-full md:w-[50%] h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px]">
-          <div className="absolute top-1/2 -translate-y-1/2 z-10 w-full">
+          <div className="absolute top-1/2 -translate-y-1/2  z-10 w-full">
             <img
               src="assets/images/app.png"
               alt="Ride app mockup"
-              className="w-full max-w-[919px] xl:w-[770px]  mx-auto"
+              className="w-full max-w-[919px] lg:w-[770px]   xl:w-[770px]  mx-auto"
               priority
             />
           </div>
