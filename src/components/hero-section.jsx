@@ -72,6 +72,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+      <div className="bg-[#4D2D7C] w-full h-[4px] mt-[-67px] ">.</div>
     </div>
   );
 };
