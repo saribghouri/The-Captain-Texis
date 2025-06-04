@@ -150,13 +150,13 @@ export default function TaxiServiceSection() {
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
                 <button
-                  className="bg-[#4d2d7c] cursor-pointer text-white font-medium rounded-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-[4px] xl:py-[20px] text-sm sm:text-lg lg:text-[16px] xl:text-[22px]  w-full sm:w-auto"
+                  className="bg-[#4d2d7c] cursor-pointer text-white font-medium rounded-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-[4px] xl:py-[20px] text-sm sm:text-lg lg:text-[12px] xl:text-[22px]  w-full sm:w-auto"
                 >
                   {currentVehicle.primaryButton}
                 </button>
                 <button
                   variant="outline"
-                  className="border border-[#4d2d7c] cursor-pointer text-[#4d2d7c] font-medium rounded-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-[4px] xl:py-[20px] text-sm sm:text-lg lg:text-[16px] xl:text-[22px]  w-full sm:w-auto"
+                  className="border border-[#4d2d7c] cursor-pointer text-[#4d2d7c] font-medium rounded-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-[4px] xl:py-[20px] text-sm sm:text-lg lg:text-[12px] xl:text-[22px]  w-full sm:w-auto"
                 >
                   {currentVehicle.secondaryButton}
                 </button>
