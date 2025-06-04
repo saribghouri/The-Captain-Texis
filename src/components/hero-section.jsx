@@ -58,7 +58,7 @@ const HeroSection = () => {
             <img className="w-[300px] " src="assets/images/RKwJVV.png" alt="" />
               <div className="flex flex-col sm:flex-row gap-4 mt-[20px]">
                 <Button
-                  className="!bg-[#4d2d7c] !rounded-[8px] !font-bold !text-white !text-base sm:!text-lg lg:!text-xl !px-8 sm:!px-8 !py-6 sm:!py-6"
+                  className="!bg-[#43266d] !rounded-[8px] !font-bold !text-white !text-base sm:!text-lg lg:!text-xl !px-8 sm:!px-8 !py-6 sm:!py-6"
                 >
                   Book A Ride
                 </Button>

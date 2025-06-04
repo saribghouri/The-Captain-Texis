@@ -394,3 +394,15 @@ width: 100%;
 }.font-falmily{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
 }
+ @keyframes slide {
+    100% {
+      transform: translateX(100%);
+    }
+    0% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-slide {
+    animation: slide 10s linear infinite;
+  }

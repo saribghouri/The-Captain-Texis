@@ -60,7 +60,7 @@ const menuData = [
       {
         heading: "Drivers",
         items: [
-          { label: "Why Drive with Us", path: "/drivers/why-drive" },
+          { label: "Why Drive with Us", path: "/drivers" },
           { label: "Become a Driver", path: "/drivers/join" },
         ],
       },
@@ -114,14 +114,14 @@ const MegaMenu = ({ columns, onItemClick }) => (
     <div className="max-w-3xl mx-auto mt-6 p-3 bg-white rounded-2xl">
       <div
         className={`grid gap-6 ${columns.length === 1
-            ? "grid-cols-1"
-            : columns.length === 2
-              ? "grid-cols-1 md:grid-cols-2"
-              : columns.length === 3
-                ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-                : columns.length === 4
-                  ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
-                  : "grid-cols-1"
+          ? "grid-cols-1"
+          : columns.length === 2
+            ? "grid-cols-1 md:grid-cols-2"
+            : columns.length === 3
+              ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+              : columns.length === 4
+                ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+                : "grid-cols-1"
           }`}
       >
         {columns.map((col, i) => (
@@ -144,7 +144,7 @@ const MegaMenu = ({ columns, onItemClick }) => (
                 </p>
                 <button
                   onClick={() => onItemClick("/last-arrivals")}
-                  className="bg-white text-[#6B46C1] px-4 py-1.5 rounded-md font-semibold"
+                  className="bg-white text-[#6B46C1] px-4 py-1.5 mb-[-30px] rounded-md font-semibold"
                 >
                   Read article
                 </button>
@@ -155,9 +155,11 @@ const MegaMenu = ({ columns, onItemClick }) => (
                   <Menu.Item
                     key={idx}
                     onClick={() => onItemClick(item.path)}
-                    className="cursor-pointer !text-[#a09a9a] !p-0 !py-[5px] !text-xs"
+                    className="cursor-pointer !text-[#a09a9a] !p-0 !py-[3px] !text-[15px] flex items-center"
                   >
-                    <span className="text-left"> {item.label}</span>
+                    <span className="relative pl-3 before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1.5 before:h-1.5 before:bg-purple-900 before:rounded-full">
+                      {item.label}
+                    </span>
                   </Menu.Item>
                 ))}
               </Menu>
@@ -241,20 +243,23 @@ const Header = () => {
 
             <div className="flex items-center gap-2">
               <Mail className="w-10 " />
-              <span className=" tracking-widest font-semibold text-[14px] text-white">Info@thecaptaintaxis.com.au</span>
+              <span className="tracking-widest font-semibold text-[14px] text-white">Info@thecaptaintaxis.com.au</span>
             </div>
           </div>
 
           <div className="hidden lg:block w-px h-4 bg-gray-600"></div>
 
-          {/* Promotional Text */}
-          <div className="flex-1 text-center lg:text-left">
-            <span className=" text-[16px]">
-              Get 20% OFF on Your First Ride! Ride with The Captain Taxis – smooth, fast, and affordable.
-            </span>
+          {/* Promotional Text with Slider */}
+          <div className="flex-1 text-center offer lg:text-left overflow-hidden">
+            <div className=" gap-50 flex animate-slide whitespace-nowrap">
+              <span className="text-[16px]">
+                Get 20% OFF on Your First Ride! Ride with The Captain Taxis – smooth, fast, and affordable.
+              </span>
+              <span className="text-[16px]">
+                Get 20% OFF on Your First Ride! Ride with The Captain Taxis – smooth, fast, and affordable.
+              </span>
+            </div>
           </div>
-
-
         </div>
       </div>
       {/* Nav bar - Hidden on mobile */}
@@ -264,20 +269,18 @@ const Header = () => {
             {/* Left side navigation */}
             <div className="flex items-center space-x-1">
               <img className="w-[120px] mr-[75px]" src="assets/images/Logo1.png" alt="" />
-              <Button
+              <button
                 type="button"
-                className="!text-[#4b4b4b] !font-medium !text-[20px]  !rounded-md !px-3 !h-9 transition-colors duration-200 hover:underline hover:decoration-purple-800 hover:decoration-2 hover:underline-offset-4"
-                onClick={() => router.push("/")}
+                className="px-5 py-1.5 rounded-md  !font-medium cursor-pointer text-[20px] hover:underline hover:decoration-purple-800 hover:decoration-2 hover:underline-offset-4  transition-colors duration-200 flex items-center gap-3" onClick={() => router.push("/")}
               >
-                Home  
-              </Button>
-              <Button
+                Home
+              </button>
+              <button
                 type="button"
-                className="!text-[#4b4b4b] !font-medium !text-[20px]  !rounded-md !px-3 !h-9 transition-colors duration-200 hover:underline hover:decoration-purple-800 hover:decoration-2 hover:underline-offset-4"
-                onClick={() => router.push("/book-a-ride")}
+                className="px-5 py-1.5 rounded-md  !font-medium cursor-pointer text-[20px] hover:underline hover:decoration-purple-800 hover:decoration-2 hover:underline-offset-4  transition-colors duration-200 flex items-center gap-3" onClick={() => router.push("/book-a-ride")}
               >
-                Book A Ride  
-              </Button>
+                Book A Ride
+              </button>
 
 
               {menuData.map((menu) => (
@@ -291,10 +294,10 @@ const Header = () => {
                   }
                   trigger={["hover"]}
                   placement="bottomCenter"
-                  overlayClassName="w-full"
+                  overlayClassName="w-full !px-[40px]"
                 >
-                  <button className="px-3 py-1.5 rounded-md  !font-medium cursor-pointer text-[20px] hover:underline hover:decoration-purple-800 hover:decoration-2 hover:underline-offset-4  transition-colors duration-200 flex items-center gap-5">
-                    {menu.label} <DownOutlined className="text-xs opacity-70" />
+                  <button className="px-5 py-1.5 rounded-md  !font-medium cursor-pointer text-[20px] hover:underline hover:decoration-purple-800 hover:decoration-2 hover:underline-offset-4  transition-colors duration-200 flex items-center gap-3">
+                    {menu.label} <DownOutlined className="text-[15px] opacity-80" />
                   </button>
                 </Dropdown>
               ))}

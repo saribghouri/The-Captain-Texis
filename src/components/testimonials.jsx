@@ -148,14 +148,14 @@ export default function TaxiServiceSection() {
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <button
-                  className="!bg-[#4d2d7c] !hover:bg-purple-900 !text-white !px-10 py-3 !text-[24px] !font-medium !rounded-lg"
+                  className="!bg-[#4d2d7c] !hover:bg-purple-900 !text-white !px-10 py-3 !text-[22px] !font-medium !rounded-lg"
                   size="lg"
                 >
                   {currentVehicle.primaryButton}
                 </button>
                 <button
                   variant="outline"
-                  className="border border-[#4d2d7c] !hover:bg-purple-900 !text-[#4d2d7c]  !px-10 py-3 !text-[24px] !font-medium !rounded-lg"
+                  className="border border-[#4d2d7c] !hover:bg-purple-900 !text-[#4d2d7c]  !px-10 py-3 !text-[22px] !font-medium !rounded-lg"
                   size="lg"
                 >
                   {currentVehicle.secondaryButton}
