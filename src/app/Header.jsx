@@ -305,7 +305,7 @@ const Header = () => {
 
             <div>
 
-              <Button className="!bg-[#4D2D7C] !text-[#ffffff] ! !px-[30px] !py-[20px] !text-[16px] rounded-2xl">Book Now</Button>
+              <Button className="!bg-[#4d2d7c] !text-[#ffffff] ! !px-[30px] !py-[20px] !text-[16px] rounded-2xl">Book Now</Button>
             </div>
           </div>
         </div>

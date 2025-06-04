@@ -84,7 +84,7 @@ const Footer = () => {
 
               <Link
                 href="#"
-                className="inline-block mt-8 !bg-[#381f5c]  text-white font-bold py-3 px-12 rounded-md transition-colors"
+                className="inline-block mt-8 !bg-[#4d2d7c]  text-white font-bold py-3 px-12 rounded-md transition-colors"
               >
                 Book Now
               </Link>

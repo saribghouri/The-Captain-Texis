@@ -120,7 +120,7 @@ const ServicesSection = () => {
           </div>
 
           <div className="pt-4 sm:pt-6">
-            <button className="bg-[#3c1d61] text-white font-medium px-6 sm:px-8 py-2 rounded-md text-base sm:text-lg hover:bg-[#5a3286] transition-colors">
+            <button className="bg-[#4d2d7c] cursor-pointer text-white font-medium px-6 sm:px-8 py-2 rounded-md text-base sm:text-lg hover:bg-[#4d2d7c] transition-colors">
               Book a Ride Now
             </button>
           </div>
@@ -141,7 +141,7 @@ const ServicesSection = () => {
             </h2>
             <p className="text-[30px] mt-[10px] font-normal">We’re here to help, anytime Learn more</p>
             <div className="flex flex-col md:flex-row gap-6 md:gap-12 mt-8">
-              <button className="bg-[#3c1d61] text-white font-medium px-8 py-2  text-left rounded-md text-lg hover:bg-[#5a3286] transition-colors">
+              <button className="bg-[#4d2d7c] cursor-pointer text-white font-medium px-8 py-2  text-left rounded-md text-lg hover:bg-[#4d2d7c] transition-colors">
               Apply to Drive
               </button>
             </div>

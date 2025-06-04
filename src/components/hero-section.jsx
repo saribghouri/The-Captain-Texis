@@ -53,17 +53,17 @@ const HeroSection = () => {
 
             {/* Call to action */}
             <div className="mt-10 sm:mt-12 lg:mt-16 flex flex-col gap-4 items-center lg:items-start">
-              <h2 className="text-2xl  sm:text-3xl lg:text-4xl  text-[#5b3a8b] font-bold font-sans">
+              <h2 className="text-2xl  sm:text-3xl lg:text-4xl  text-[#4d2d7c] font-bold font-sans">
               </h2>
             <img className="w-[300px] " src="assets/images/RKwJVV.png" alt="" />
               <div className="flex flex-col sm:flex-row gap-4 mt-[20px]">
                 <Button
-                  className="!bg-[#43266d] !rounded-[8px] !font-bold !text-white !text-base sm:!text-lg lg:!text-xl !px-8 sm:!px-8 !py-6 sm:!py-6"
+                  className="!bg-[#482a75] !rounded-[8px] !font-bold !text-white !text-base sm:!text-lg lg:!text-xl !px-8 sm:!px-8 !py-6 sm:!py-6"
                 >
                   Book A Ride
                 </Button>
                 <Button
-                  className="!text-[#5b3a8b] !rounded-[8px] !font-bold !text-base sm:!text-lg lg:!text-xl !px-8 sm:!px-8 !py-6 sm:!py-6 !border-[#5b3a8b]"
+                  className="!text-[#4d2d7c] !rounded-[8px] !font-bold !text-base sm:!text-lg lg:!text-xl !px-8 sm:!px-8 !py-6 sm:!py-6 !border-[#5b3a8b]"
                 >
                   Apply to Drive
                 </Button>

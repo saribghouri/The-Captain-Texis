@@ -11,7 +11,7 @@ export default function CustomerBenefits() {
         <div className="text-center mb-12">
           <h2 className="text-7xl font-bold mb-6 leading-tight">
             <span className="text-black">Book Ride With </span>
-            <span className="text-[#4b2e83]">The Captain Taxi</span>
+            <span className="text-[#4d2d7c]">The Captain Taxi</span>
           </h2>
 
           {/* Description */}

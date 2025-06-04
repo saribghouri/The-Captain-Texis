@@ -89,7 +89,7 @@ export default function TaxiServiceSection() {
     <div className="w-full relative  py-8 ">
       <div className="text-center mb-8 mt-[60px]">
 
-      <h1 className="text-[70px] font-bold">Our Vehicle <span className="text-[#4d2d7c] text-center ">Captain</span>  Fleet</h1>
+        <h1 className="text-[70px] font-bold">Our Vehicle <span className="text-[#4d2d7c] text-center ">Captain</span>  Fleet</h1>
       </div>
       <div className="max-w-[85%]  mx-auto">
         {/* Vehicle Type Cards */}
@@ -115,14 +115,14 @@ export default function TaxiServiceSection() {
           <div className="flex gap-4 ml-4">
             <button
               onClick={handlePrevious}
-              className="w-12 h-12 rounded-full border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
+              className="w-12 h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
               disabled={isTransitioning}
             >
               <ChevronLeft className="w-7 h-7 text-black" />
             </button>
             <button
               onClick={handleNext}
-              className="w-12 h-12 rounded-full border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
+              className="w-12 h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
               disabled={isTransitioning}
             >
               <ChevronRight className="w-7 h-7 text-black" />
@@ -148,14 +148,14 @@ export default function TaxiServiceSection() {
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <button
-                  className="!bg-[#4d2d7c] !hover:bg-purple-900 !text-white !px-10 py-3 !text-[22px] !font-medium !rounded-lg"
+                  className="bg-[#4d2d7c] cursor-pointer !hover:bg-purple-900 !text-white !px-10 py-3 !text-[22px] !font-medium !rounded-lg"
                   size="lg"
                 >
                   {currentVehicle.primaryButton}
                 </button>
                 <button
                   variant="outline"
-                  className="border border-[#4d2d7c] !hover:bg-purple-900 !text-[#4d2d7c]  !px-10 py-3 !text-[22px] !font-medium !rounded-lg"
+                  className="border border-[#4d2d7c] cursor-pointer !hover:bg-purple-900 !text-[#4d2d7c]  !px-10 py-3 !text-[22px] !font-medium !rounded-lg"
                   size="lg"
                 >
                   {currentVehicle.secondaryButton}
@@ -166,17 +166,17 @@ export default function TaxiServiceSection() {
               <div className="flex gap-4">
                 <button
                   onClick={handlePrevious}
-              className="w-12 h-12 rounded-full border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
+                  className="w-12 h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
                   disabled={isTransitioning}
                 >
-              <ChevronLeft className="w-7 h-7 text-black" />
+                  <ChevronLeft className="w-7 h-7 text-black" />
                 </button>
                 <button
                   onClick={handleNext}
-              className="w-12 h-12 rounded-full border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
+                  className="w-12 h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
                   disabled={isTransitioning}
                 >
-              <ChevronRight className="w-7 h-7 text-black" />
+                  <ChevronRight className="w-7 h-7 text-black" />
                 </button>
               </div>
             </div>
@@ -196,13 +196,13 @@ export default function TaxiServiceSection() {
           </div>
         </div>
       </div>
-        <div className=" z-10  mt-[-60px]">
-          <img
-            src="assets/fonts/2796af52-911d-43b9-b649-c6614aafacfd (1).jfif"
-            alt="Taxi Service"
-            className="w-full h-auto   object-cover"
-          />
-        </div>
+      <div className=" z-10  mt-[-60px]">
+        <img
+          src="assets/fonts/2796af52-911d-43b9-b649-c6614aafacfd (1).jfif"
+          alt="Taxi Service"
+          className="w-full h-auto   object-cover"
+        />
+      </div>
     </div>
   )
 }
