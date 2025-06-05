@@ -117,9 +117,9 @@ const page = () => {
 
                   {/* Right Arrow */}
                   <button
-                    onClick={() => setCurrentSlide(Math.min(2, currentSlide + 1))}
+                    onClick={() => setCurrentSlide(Math.min(1, currentSlide + 1))}
                     className="absolute right-[-20px] top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 hover:bg-gray-50"
-                    disabled={currentSlide === 2}
+                    disabled={currentSlide === 1}
                   >
                     <ChevronRight className="w-5 h-5 text-gray-600" />
                   </button>
@@ -137,7 +137,7 @@ const page = () => {
                             className={`${selectedCar === "sedan-max4" ? "border-2 border-purple-900 bg-purple-50" : "border border-gray-200 hover:border-gray-300"} rounded-lg p-1 text-center flex flex-col items-center cursor-pointer`}
                             onClick={() => handleCarSelect("sedan-max4")}
                           >
-                            <img className=" h-12" src="assets/images/sedan.png" alt="" />
+                            <img className=" mt-[6px] h-12" src="assets/images/seedan.png" alt="" />
                             <div className="text-[16px] font-medium mt-[6px]">
                               {" "}
                               <span className="font-semibold">Sedan</span> Max 4
@@ -147,7 +147,7 @@ const page = () => {
                             className={`${selectedCar === "suv-max5" ? "border-2 border-purple-900 bg-purple-50" : "border border-gray-200 hover:border-gray-300"} rounded-lg p-1 text-center flex flex-col items-center cursor-pointer`}
                             onClick={() => handleCarSelect("suv-max5")}
                           >
-                            <img className=" h-12" src="assets/images/suv.png" alt="" />
+                            <img className=" h-15" src="assets/images/new-suv.png" alt="" />
                             <div className="text-[16px] font-medium mt-[6px]">
                               {" "}
                               <span className="font-semibold">SUV</span> Max 5
@@ -157,7 +157,7 @@ const page = () => {
                             className={`${selectedCar === "maxi-max7" ? "border-2 border-purple-900 bg-purple-50" : "border border-gray-200 hover:border-gray-300"} rounded-lg p-1 text-center flex flex-col items-center cursor-pointer`}
                             onClick={() => handleCarSelect("maxi-max7")}
                           >
-                            <img className=" h-12" src="assets/images/maxi 7.png" alt="" />
+                            <img className=" h-14" src="assets/images/maxi-5.png" alt="" />
                             <div className="text-[16px] font-medium mt-[6px]">
                               <span className="font-semibold">Maxi</span> Max 7
                             </div>
@@ -166,10 +166,10 @@ const page = () => {
                             className={`${selectedCar === "maxi-1" ? "border-2 border-purple-900 bg-purple-50" : "border border-gray-200 hover:border-gray-300"} rounded-lg p-1 text-center flex flex-col items-center cursor-pointer`}
                             onClick={() => handleCarSelect("maxi-1")}
                           >
-                            <img className=" h-12" src="assets/images/suv.png" alt="" />
+                            <img className=" h-14" src="assets/images/maxi-11.png" alt="" />
                             <div className="text-[16px] font-medium mt-[6px]">
                               {" "}
-                              <span className="font-semibold">Maxi</span>Maxi
+                              <span className="font-semibold">Maxi</span>Max 11
                             </div>
                           </div>
                         </div>
@@ -182,94 +182,44 @@ const page = () => {
                             className={`${selectedCar === "maxi-2" ? "border-2 border-purple-900 bg-purple-50" : "border border-gray-200 hover:border-gray-300"} rounded-lg p-1 text-center flex flex-col items-center cursor-pointer`}
                             onClick={() => handleCarSelect("maxi-2")}
                           >
-                            <img className=" h-12" src="assets/images/suv.png" alt="" />
+                            <img className=" h-12" src="assets/images/cargo.png" alt="" />
                             <div className="text-[16px] font-medium mt-[6px]">
                               {" "}
-                              <span className="font-semibold">Maxi</span>Maxi
+                              <span className="font-semibold">Cargo</span>
                             </div>
                           </div>
                           <div
                             className={`${selectedCar === "maxi-3" ? "border-2 border-purple-900 bg-purple-50" : "border border-gray-200 hover:border-gray-300"} rounded-lg p-1 text-center flex flex-col items-center cursor-pointer`}
                             onClick={() => handleCarSelect("maxi-3")}
                           >
-                            <img className=" h-12" src="assets/images/suv.png" alt="" />
+                            <img className=" h-12" src="assets/images/pOwiIe.png" alt="" />
                             <div className="text-[16px] font-medium mt-[6px]">
                               {" "}
-                              <span className="font-semibold">Maxi </span> Maxi
+                              <span className="font-semibold">Premium </span>
                             </div>
                           </div>
                           <div
                             className={`${selectedCar === "sedan-2" ? "border-2 border-purple-900 bg-purple-50" : "border border-gray-200 hover:border-gray-300"} rounded-lg p-1 text-center flex flex-col items-center cursor-pointer`}
                             onClick={() => handleCarSelect("sedan-2")}
                           >
-                            <img className=" h-12" src="assets/images/sedan.png" alt="" />
+                            <img className=" h-12" src="assets/images/wheelchair.svg" alt="" />
                             <div className="text-[16px] font-medium mt-[6px]">
                               {" "}
-                              <span className="font-semibold">Sedan</span> Max 4
+                              <span className="font-semibold">Wheelchair</span>
                             </div>
                           </div>
-                          <div
-                            className={`${selectedCar === "maxi-max7-2" ? "border-2 border-purple-900 bg-purple-50" : "border border-gray-200 hover:border-gray-300"} rounded-lg p-1 text-center flex flex-col items-center cursor-pointer`}
-                            onClick={() => handleCarSelect("maxi-max7-2")}
-                          >
-                            <img className=" h-12" src="assets/images/maxi 7.png" alt="" />
-                            <div className="text-[16px] font-medium mt-[6px]">
-                              <span className="font-semibold">Maxi</span> Max 7
-                            </div>
-                          </div>
+
                         </div>
                       </div>
 
-                      {/* Slide 3 */}
-                      <div className="w-full flex-shrink-0">
-                        <div className="grid grid-cols-4 gap-2">
-                          <div
-                            className={`${selectedCar === "maxi-max7-3" ? "border-2 border-purple-900 bg-purple-50" : "border border-gray-200 hover:border-gray-300"} rounded-lg p-1 text-center flex flex-col items-center cursor-pointer`}
-                            onClick={() => handleCarSelect("maxi-max7-3")}
-                          >
-                            <img className=" h-12" src="assets/images/maxi 7.png" alt="" />
-                            <div className="text-[16px] font-medium mt-[6px]">
-                              <span className="font-semibold">Maxi</span> Max 7
-                            </div>
-                          </div>
-                          <div
-                            className={`${selectedCar === "sedan-3" ? "border-2 border-purple-900 bg-purple-50" : "border border-gray-200 hover:border-gray-300"} rounded-lg p-1 text-center flex flex-col items-center cursor-pointer`}
-                            onClick={() => handleCarSelect("sedan-3")}
-                          >
-                            <img className=" h-12" src="assets/images/sedan.png" alt="" />
-                            <div className="text-[16px] font-medium mt-[6px]">
-                              {" "}
-                              <span className="font-semibold">Sedan</span> Max 4
-                            </div>
-                          </div>
-                          <div
-                            className={`${selectedCar === "suv-2" ? "border-2 border-purple-900 bg-purple-50" : "border border-gray-200 hover:border-gray-300"} rounded-lg p-1 text-center flex flex-col items-center cursor-pointer`}
-                            onClick={() => handleCarSelect("suv-2")}
-                          >
-                            <img className=" h-12" src="assets/images/suv.png" alt="" />
-                            <div className="text-[16px] font-medium mt-[6px]">
-                              {" "}
-                              <span className="font-semibold">SUV</span> Max 5
-                            </div>
-                          </div>
-                          <div
-                            className={`${selectedCar === "maxi-4" ? "border-2 border-purple-900 bg-purple-50" : "border border-gray-200 hover:border-gray-300"} rounded-lg p-1 text-center flex flex-col items-center cursor-pointer`}
-                            onClick={() => handleCarSelect("maxi-4")}
-                          >
-                            <img className=" h-12" src="assets/images/suv.png" alt="" />
-                            <div className="text-[16px] font-medium mt-[6px]">
-                              {" "}
-                              <span className="font-semibold">Maxi</span> Maxi
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                  
+
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Payment Method */}
+          
               <div className="mb-6">
                 <label className="text-[18px] font-semibold text-black mb-3 block">Payment Method</label>
                 <div className="flex gap-10 flex-wrap items-center">
@@ -302,17 +252,15 @@ const page = () => {
 
                   <div className="flex bg-gray-100 rounded">
                     <button
-                      className={`px-4 py-1 text-sm font-medium rounded ${
-                        isAM ? "bg-purple-900 text-white" : "text-gray-600"
-                      }`}
+                      className={`px-4 py-1 text-sm font-medium rounded ${isAM ? "bg-purple-900 text-white" : "text-gray-600"
+                        }`}
                       onClick={() => handleAMPMClick("AM")}
                     >
                       AM
                     </button>
                     <button
-                      className={`px-4 py-2 text-sm font-medium rounded ${
-                        !isAM ? "bg-purple-900 text-white" : "text-gray-600"
-                      }`}
+                      className={`px-4 py-2 text-sm font-medium rounded ${!isAM ? "bg-purple-900 text-white" : "text-gray-600"
+                        }`}
                       onClick={() => handleAMPMClick("PM")}
                     >
                       PM

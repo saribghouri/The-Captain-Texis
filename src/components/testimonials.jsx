@@ -8,7 +8,7 @@ const vehicleTypes = [
   {
     id: "standard-taxi",
     name: "Standard Taxi",
-    image: "assets/fonts/Standard Taxi.svg",
+    image: "assets/images/seedan.png",
     title: "Catch A Ride In A",
     subtitle: "Standard Taxi",
     description:
@@ -20,7 +20,7 @@ const vehicleTypes = [
   {
     id: "suv",
     name: "SUV",
-    image: "assets/fonts/SUV.svg",
+    image: "assets/images/new-suv.png",
     title: "Catch A Ride In A",
     subtitle: "SUV",
     description:
@@ -32,7 +32,7 @@ const vehicleTypes = [
   {
     id: "airport-shuttle",
     name: "Airport Shuttle",
-    image: "assets/fonts/Airport Shuttle.svg",
+    image: "assets/images/maxi-11.png",
     title: "Catch A Ride In A",
     subtitle: "Airport Shuttle",
     description:
@@ -44,7 +44,7 @@ const vehicleTypes = [
   {
     id: "cargo",
     name: "Cargo",
-    image: "assets/fonts/Cargo.svg",
+    image: "assets/images/cargo.png",
     title: "Catch A Ride In A",
     subtitle: "Cargo",
     description:
@@ -100,13 +100,13 @@ export default function TaxiServiceSection() {
                 key={vehicle.id}
                 onClick={() => handleCardClick(index)}
                 className={`
-                  flex items-center justify-between gap-2 px-6 py-4 rounded-[10px] border border-gray-200 cursor-pointer transition-all duration-300
-                  ${index === currentIndex ? "bg-white shadow-md" : "bg-white"}
+                  flex items-center justify-between gap-2 pl-6 py-2 rounded-[10px] border border-gray-200 cursor-pointer transition-all duration-300
+                  ${index === currentIndex ? "bg-[#ececec] shadow-md !border !border-[#2c0c5c] " : "bg-white"}
                   min-w-[345px] 
                 `}
               >
-                <span className="font-medium text-[22px] text-gray-800 whitespace-nowrap">{vehicle.name}</span>
-                <img src={vehicle.image || "/placeholder.svg"} alt={vehicle.name} className="w-[112px] h-[38px] object-contain" />
+                <span className=" text-[22px] font-semibold text-black whitespace-nowrap">{vehicle.name}</span>
+                <img src={vehicle.image || "/placeholder.svg"} alt={vehicle.name} className="w-[212px] h-[58px] object-contain" />
               </div>
             ))}
           </div>

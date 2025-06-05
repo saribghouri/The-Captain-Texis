@@ -127,8 +127,8 @@ const ServicesSection = () => {
         </div>
       </div>
     </div>
-      <div className=" mx-auto px-4 py-16 md:py-24">
-        <div className="flex flex-col md:flex-row w-full items-center justify-between gap-8 ">
+      <div className=" mx-auto px-14 py-16 md:py-24">
+        <div className="flex flex-col md:flex-row w-full items-center justify-between gap-6 ">
 
           <div className="w-full md:w-1/2 space-y-6 flex flex-col  justify-center  ">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">

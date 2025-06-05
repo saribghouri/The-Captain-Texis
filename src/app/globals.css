@@ -21,18 +21,8 @@ body {
   src: local('Aero'), url('https://fonts.cdnfonts.com/s/62901/Aero.woff') format('woff');
 }
 
-@font-face {
-  font-family: 'Autography';
-  src: url('/public/font/Autography.otf') format('opentype');
-  /* Correct format */
-  font-weight: normal;
-  font-style: normal;
-}
 
-.phd {
-  font-family: 'Autography', sans-serif;
-  letter-spacing: 5px;
-}
+
 
 .hero-hd {
   font-family: 'Aero', sans-serif;
