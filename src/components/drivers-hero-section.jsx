@@ -158,7 +158,7 @@ const DriversHeroSection = () => {
         <div className='w-full md:w-[90%] lg:w-[30%] flex flex-col gap-4 relative z-10'>
           <div className='bg-[#ffffff] rounded-2xl text-center h-[45vh] px-6 py-4 flex flex-col '>
             <div>
-              <h1 className='text-3xl sm:text-6xl font-bold leading-18'>
+              <h1 className='text-3xl sm:text-6xl lg:text-5xl font-bold lg:leading-16 leading-18'>
                 How to Become <br />
                 a <span className='text-[#4d2d7c]'>Captain?</span>
               </h1>
@@ -176,7 +176,7 @@ const DriversHeroSection = () => {
               </button>
             </div>
           </div>
-          <div className='bg-[#f5f3f3] rounded-2xl z-0'>
+          <div className='bg-[#f5f3f3] rounded-2xl lg:mt-[40px]  '>
             <img src="assets/images/pic. back.png" alt="" className='w-full object-contain' />
           </div>
         </div>
@@ -213,11 +213,11 @@ const DriversHeroSection = () => {
         </div>
       </div>
 
-<TaxiForm/>
-<div className='mt-[50px]'>
+      <TaxiForm />
+      <div className='mt-[50px]'>
 
-  <Footer />
-</div>
+        <Footer />
+      </div>
     </div>
 
   );

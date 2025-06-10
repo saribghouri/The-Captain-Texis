@@ -118,7 +118,7 @@ const TaxiForm = () => {
                         <Input.TextArea placeholder="Enter Here" />
                     </Form.Item>
                     <Form.Item>
-                        <Button className='!py-5 !mt-[20px]'
+                        <Button className='!py-5 !mt-[20px] !rounded-[8px]'
                             type="primary"
                             htmlType="submit"
                             block
