@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif ;
   overflow-x: hidden;
   width: 100%;
   margin: 0;
@@ -422,4 +422,7 @@ font-family: 'Pastella Autography';
 
 .drivers-shadow {
   box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(238, 238, 238, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.texxxx{
+  font-weight: 500;
 }

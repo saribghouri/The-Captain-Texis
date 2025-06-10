@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button } from 'antd';
 import Head from 'next/head';
+import TaxiForm from './driver-form';
+import Footer from './footer';
 
 const DriversHeroSection = () => {
   return (
@@ -64,47 +66,55 @@ const DriversHeroSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32">
             {/* Left Card */}
             <div className="relative">
-              <div className="absolute inset-0 bg-gray-200 rounded-2xl transform translate-x-4 translate-y-4 z-0"></div>
-              <div className="relative bg-[#1A2526] text-white p-8 sm:p-8 lg:p-16 rounded-2xl z-10">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
+              <div className="absolute inset-10 bg-gray-200 bg-section rounded-2xl transform translate-z-7 translate-x-[-100px] translate-y-26 z-0"></div>
+              <div className="relative bg-[#0D151C] text-white p-8 sm:p-8 lg:p-22 rounded-2xl z-10">
+                <h2 className="text-3xl sm:text-4xl lg:text-[60px] font-bold mb-4 sm:mb-6 leading-tight">
                   Why Drive with The Captain Taxis?
                 </h2>
-                <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
+                <p className="text-sm sm:text-base lg:text-[22px] w-[76%]  leading-10">
                   Enjoy the freedom to choose your hours, earn great income, and get full support every step of the way. Driving with us means more flexibility, better tools, and a reliable team behind you.
                 </p>
               </div>
             </div>
-
             {/* Right Benefits Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 relative">
+              {/* Vertical center line */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="w-px h-full bg-gray-200"></div>
+              </div>
+              {/* Horizontal center line */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="h-px w-full bg-gray-200"></div>
+              </div>
+
               {/* Benefit 1 */}
-              <div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#1A2526] mb-2 sm:mb-3">Flexible Hours</h3>
-                <p className="text-sm sm:text-base text-gray-600">
+              <div className='p-10 text-center'>
+                <h3 className="text-[30px] sm:text-xl lg:text-[30px] font-bold text-[#000000] mb-2 sm:mb-3">Flexible Hours</h3>
+                <p className="text-sm  text-center sm:text-[20px] text-black mt-[25px]">
                   Drive when you want, work around your schedule.
                 </p>
               </div>
 
               {/* Benefit 2 */}
-              <div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#1A2526] mb-2 sm:mb-3">Competitive Earnings</h3>
-                <p className="text-sm sm:text-base text-gray-600">
+              <div className='p-10 text-center'>
+                <h3 className="text-lg sm:text-xl lg:text-[30px] font-bold text-[#000000] mb-2 sm:mb-3">Competitive Earnings</h3>
+                <p className="text-sm text-center sm:text-[20px] text-black mt-[25px]">
                   Earn a great income with transparent pricing and regular payouts.
                 </p>
               </div>
 
               {/* Benefit 3 */}
-              <div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#1A2526] mb-2 sm:mb-3">Easy-to-Use App</h3>
-                <p className="text-sm sm:text-base text-gray-600">
+              <div className='p-10 text-center'>
+                <h3 className="text-lg sm:text-xl lg:text-[30px] font-bold text-[#000000] mb-2 sm:mb-3">Easy-to-Use App</h3>
+                <p className="text-sm text-center sm:text-[20px] text-black mt-[25px]">
                   Manage your rides efficiently with our intuitive driver app.
                 </p>
               </div>
 
               {/* Benefit 4 */}
-              <div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#1A2526] mb-2 sm:mb-3">Safety First</h3>
-                <p className="text-sm sm:text-base text-gray-600">
+              <div className='p-10 text-center'>
+                <h3 className="text-lg sm:text-xl lg:text-[30px] font-bold text-[#000000] mb-2 sm:mb-3">Safety First</h3>
+                <p className="text-sm text-center sm:text-[20px] text-black mt-[25px]">
                   Your safety is our top priority.
                 </p>
               </div>
@@ -112,71 +122,102 @@ const DriversHeroSection = () => {
           </div>
         </div>
       </section>
-      <div className='flex justify-center items-center gap-12 '>
-        <div className='w-[20%] bg-white  flex flex-col gap-4'  >
-          <div className='bg-[#ececec] p-15 rounded-2xl h-[40vh]'>
-            <div className='flex justify-between'>
-              <img src="assets\images\Fixed.svg" alt="" />
-              <h1 className='text-[50px]'>01</h1>
-            </div>
-            <div>
-
-              <h1>Check Eligibility</h1>
-              <p>Review our simple driver criteria and vehicle requirements to get started.</p>
-            </div>
-          </div>
-          <div className='bg-[#ececec] p-15 rounded-2xl h-[40vh]'>
-            <div className='flex justify-between'>
-              <img src="assets\images\Fixed.svg" alt="" />
-              <h1 className='text-[50px]'>02</h1>
-            </div>
-            <div>
-
-              <h1>Check Eligibility</h1>
-              <p>Review our simple driver criteria and vehicle requirements to get started.</p>
-            </div>
-          </div>
-        </div>
-        <div className='w-[30%]  flex flex-col gap-4 '>
-          <div className='bg-[#ffffff] rounded-2xl text-center h-[40vh] '>
-            <h1 className='text-[70px] leading-20 font-bold'>How to Become <br></br>a <span className='text-[#4d2d7c]'>Captain?</span></h1>
-            <p className='text-[20px] leading-8 mt-[30px]'>Joining The Captain Taxis is quick and stress-free. From sign-up to your first ride, we’ve made
-              everything simple so you can focus on what matters — driving and earning.
-              Here’s how you can get on the road with us in no time.</p>
-            <div className="flex justify-center gap-4 mt-4">
-        <button className="bg-[#4d2d7c] w-[50%] text-white px-6 py-3 rounded-lg capitalize font-semibold">Drive with Captain</button>
-        <button className="bg-white  w-[40%] text-gray-700 px-6 py-3 rounded-lg capitalize font-semibold border border-gray-300">Contact Us</button>
-      </div>
-          </div>
-          <div className='bg-[#ececec]  rounded-2xl'>
-            <img src="assets/images/pic. back.png" alt="" />
-          </div>
-        </div>
-        <div className='w-[20%] bg-white  flex flex-col gap-4'>
-          <div className='bg-[#ececec] p-15 rounded-2xl h-[40vh] '>
+      <div className='flex flex-wrap justify-center items-start gap-12 mt-[50px]'>
+        {/* Left Column */}
+        <div className='w-full md:w-[45%] lg:w-[20%] bg-white flex flex-col gap-4'>
+          {/* Card 1 */}
+          <div className='bg-[#f4f5f7] px-6 py-4 rounded-2xl h-[45vh] flex flex-col '>
             <div className='flex justify-between '>
-              <img src="assets\images\Fixed.svg" alt="" />
-              <h1 className='text-[50px]'>03</h1>
+              <img src="assets/images/Check Eligibility (1).svg" alt="" className='w-10 sm:w-12 object-contain' />
+              <h1 className='text-[80px] sm:text-[100px] text-[#F0F0F0] font-extrabold'>01</h1>
             </div>
-            <div>
-
-              <h1>Check Eligibility</h1>
-              <p>Review our simple driver criteria and vehicle requirements to get started.</p>
+            <div className='space-y-2'>
+              <h1 className='text-xl sm:text-2xl lg:text-[30px] font-semibold'>Check Eligibility</h1>
+              <p className='text-sm sm:text-base lg:text-[20px]  mt-[40px]'>
+                Review our simple driver criteria and vehicle requirements to get started.
+              </p>
             </div>
           </div>
-          <div className='bg-[#ececec] p-15 rounded-2xl h-[40vh]'>
-            <div className='flex justify-between'>
-              <img src="assets\images\Fixed.svg" alt="" />
-              <h1 className='text-[50px]'>04</h1>
-            </div>
-            <div>
 
-              <h1>Check Eligibility</h1>
-              <p>Review our simple driver criteria and vehicle requirements to get started.</p>
+          {/* Card 2 */}
+          <div className='bg-[#f4f5f7] px-6 py-4 rounded-2xl h-[45vh] flex flex-col'>
+            <div className='flex justify-between '>
+              <img src="assets/images/Verification  & Training.svg" alt="" className='w-10 sm:w-12 object-contain' />
+              <h1 className='text-[80px] sm:text-[100px] text-[#F0F0F0] font-extrabold'>02</h1>
+            </div>
+            <div className='space-y-2'>
+              <h1 className='text-xl sm:text-2xl lg:text-[30px] font-semibold'>Verification & Training</h1>
+              <p className='text-sm sm:text-base lg:text-[20px]  mt-[40px]'>
+                We’ll verify your documents and provide essential onboarding and training.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Middle Column */}
+        <div className='w-full md:w-[90%] lg:w-[30%] flex flex-col gap-4 relative z-10'>
+          <div className='bg-[#ffffff] rounded-2xl text-center h-[45vh] px-6 py-4 flex flex-col '>
+            <div>
+              <h1 className='text-3xl sm:text-6xl font-bold leading-18'>
+                How to Become <br />
+                a <span className='text-[#4d2d7c]'>Captain?</span>
+              </h1>
+              <p className='text-sm sm:text-base text-center lg:text-[20px] mt-8 leading-8'>
+                Joining The Captain Taxis is quick and stress-free. From sign-up to your first ride, we’ve made everything simple
+                so you can focus on what matters — driving and earning. Here’s how you can get on the road with us in no time.
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
+              <button className="bg-[#4d2d7c] w-[80%] sm:w-[50%] text-white px-6 py-3 rounded-lg font-semibold">
+                Drive with Captain
+              </button>
+              <button className="bg-white w-[80%] sm:w-[40%] text-gray-700 px-6 py-3 rounded-lg font-semibold border border-gray-300">
+                Contact Us
+              </button>
+            </div>
+          </div>
+          <div className='bg-[#f5f3f3] rounded-2xl z-0'>
+            <img src="assets/images/pic. back.png" alt="" className='w-full object-contain' />
+          </div>
+        </div>
+
+        {/* Right Column */}
+        <div className='w-full md:w-[45%] lg:w-[20%] bg-white flex flex-col gap-4'>
+          {/* Card 3 */}
+          <div className='bg-[#f4f5f7] px-6 py-4 rounded-2xl h-[45vh] flex flex-col '>
+            <div className='flex justify-between  '>
+              <img src="assets/images/Complete Application.svg" alt="" className='w-10 sm:w-12 object-contain' />
+              <h1 className='text-[80px] sm:text-[100px] text-[#F0F0F0] font-extrabold'>03</h1>
+            </div>
+            <div className='space-y-2'>
+              <h1 className='text-xl sm:text-2xl lg:text-[30px] font-semibold'>Complete Application</h1>
+              <p className='text-sm sm:text-base lg:text-[20px]  mt-[40px]'>
+                Fill out our secure and straightforward online application form.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 4 */}
+          <div className='bg-[#f4f5f7] px-6 py-4 rounded-2xl h-[45vh] flex flex-col '>
+            <div className='flex justify-between '>
+              <img src="assets/images/Start Your First Ride!.svg" alt="" className='w-10 sm:w-12 object-contain' />
+              <h1 className='text-[80px] sm:text-[100px] text-[#F0F0F0] font-extrabold'>04</h1>
+            </div>
+            <div className='space-y-2'>
+              <h1 className='text-xl sm:text-2xl lg:text-[30px] font-semibold'>Start Your First Ride!</h1>
+              <p className='text-sm sm:text-base lg:text-[20px]  mt-[40px]'>
+                Once approved, download our app and begin earning with The Captain Taxis.
+              </p>
             </div>
           </div>
         </div>
       </div>
+
+<TaxiForm/>
+<div className='mt-[50px]'>
+
+  <Footer />
+</div>
     </div>
 
   );
