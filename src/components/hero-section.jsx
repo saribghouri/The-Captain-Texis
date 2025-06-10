@@ -3,7 +3,7 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div className="relative  w-full bg-contain  bg-no-repeat overflow-hidden" style={{ backgroundImage: "url('/assets/images/50211c28-74d6-4590-acb4-868758c15deb.jfif')" }}>
+    <div className="relative  w-full bg-cover  bg-no-repeat overflow-hidden" style={{ backgroundImage: "url('/assets/images/50211c28-74d6-4590-acb4-868758c15deb.jfif')" }}>
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-4 lg:px-2">
         <div className="w-full max-w-[90%] mt-[-50px] flex flex-col  lg:flex-row items-center">
           <div className="w-full lg:w-2/2 text-center lg:text-left">
@@ -55,7 +55,7 @@ const HeroSection = () => {
             <div className="mt-10 sm:mt-12 lg:mt-16 flex flex-col gap-4 items-center lg:items-start">
               <h2 className="text-2xl  sm:text-3xl lg:text-4xl  text-[#4d2d7c] font-bold font-sans">
               </h2>
-            <img className="w-[300px] " src="assets/images/RKwJVV.png" alt="" />
+              <img className="w-[300px] " src="assets/images/RKwJVV.png" alt="" />
               <div className="flex flex-col sm:flex-row gap-4 mt-[20px]">
                 <Button
                   className="!bg-[#482a75] !rounded-[8px] !font-bold !text-white !text-base sm:!text-lg lg:!text-xl !px-8 sm:!px-8 !py-6 sm:!py-6"
