@@ -176,7 +176,7 @@ const DriversHeroSection = () => {
               </button>
             </div>
           </div>
-          <div className='bg-[#f5f3f3] rounded-2xl lg:mt-[40px]  '>
+          <div className='bg-[#f5f3f3] rounded-2xl lg:mt-[40px] xl:mt-[10px]  '>
             <img src="assets/images/pic. back.png" alt="" className='w-full object-contain' />
           </div>
         </div>
