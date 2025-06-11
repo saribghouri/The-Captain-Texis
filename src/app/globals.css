@@ -426,3 +426,50 @@ font-family: 'Pastella Autography';
 .texxxx{
   font-weight: 500;
 }
+.custom_container {
+  width: 100%;
+  max-width: 1470px;
+  margin: 0 auto;
+  padding: 0 5px;
+}
+
+.marquee {
+  height: 170px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee--inner {
+  display: flex;
+  width: 200%;
+  position: absolute;
+  animation: marquee 25s linear infinite;
+}
+
+.marquee--inner span {
+  flex: 1;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.radial-gradients {
+  background-image: radial-gradient(#15b0f8 -40%, transparent 20%, #08132d 80%);
+}
+.Italianno {
+  font-family: "Italianno";
+  font-size: 40px;
+}
+.marquee_wrapper{
+justify-content: center;
+  display: flex;
+  align-items: center;
+}

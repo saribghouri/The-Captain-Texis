@@ -1,5 +1,7 @@
+
 "use client"
 
+import Image from "next/image"
 
 const WhereYouCanUse = () => {
   const partners = [
@@ -42,21 +44,61 @@ const WhereYouCanUse = () => {
 
       {/* Partners logos section */}
       <div
-        className="absolute right-0 top-0 h-full flex items-center pr-6 md:pr-12"
+        className="absolute right-0 top-0 h-full  items-center pr-6 md:pr-12"
         style={{ width: "67%" }}
       >
-        <div className="flex items-center gap-8 md:gap-12 ">
-          {partners.map((partner, index) => (
-            <div key={index} className="flex items-center justify-center">
-              <img
-                src={partner.logo || "/placeholder.svg"}
-                alt={partner.name}
-              
-                className=""
-              />
+  
+         <div class="marquee_wrapper">
+        <div class="custom_container">
+          <div class="marquee">
+            <div class="marquee--inner flex items-center justify-between">
+              <span> 
+                <img
+                  src="assets/images/cabrage.png"
+                  height="189px"
+                  width="256px"
+                  alt="bramd name"
+                />
+              </span>
+              <span> 
+                <img
+                  src="assets/images/the-austrailian.png"
+                  height="189px"
+                  width="256px"
+                  alt="bramd name"
+                />
+              </span>
+
+              <span>
+                <img
+                  src="assets/images/blackwhite.png"
+                  height="89px"
+                  width="256px"
+                  alt="brand name"
+                />
+              </span>
+              <span>
+                <img
+                  src="assets/images/sydney-airport.png"
+                  height="89px"
+                  width="256px"
+                  alt="brand name"
+                />
+              </span>
+              <span>
+                <img
+                  src="assets/images/taxi-plus.png"
+                  height="89px"
+                  width="256px"
+                  alt="brand name"
+                />
+              </span>
             </div>
-          ))}
+          </div>
         </div>
+      </div>
+  
+   
       </div>
     </div>
   
