@@ -100,13 +100,13 @@ export default function TaxiServiceSection() {
                 key={vehicle.id}
                 onClick={() => handleCardClick(index)}
                 className={`
-                  flex items-center justify-between gap-2 pl-6 py-2 rounded-[10px] border border-gray-200 cursor-pointer transition-all duration-300
+                  flex items-center justify-between gap-2 px-6 py-2 rounded-[10px] border border-gray-200 cursor-pointer transition-all duration-300
                   ${index === currentIndex ? "bg-[#ececec] shadow-md !border !border-[#2c0c5c] " : "bg-white"}
-                  min-w-[345px] 
+                  min-w-[360px] 
                 `}
               >
                 <span className=" text-[22px] font-semibold text-black whitespace-nowrap">{vehicle.name}</span>
-                <img src={vehicle.image || "/placeholder.svg"} alt={vehicle.name} className="w-[212px] h-[58px] object-contain" />
+                <img src={vehicle.image || "/placeholder.svg"} alt={vehicle.name} className=" h-[58px] object-contain" />
               </div>
             ))}
           </div>
