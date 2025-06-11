@@ -1,8 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "antd"
 
 const vehicleTypes = [
   {
@@ -58,6 +57,11 @@ const vehicleTypes = [
 export default function TaxiServiceSection() {
   const [currentIndex, setCurrentIndex] = useState(2)
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const containerRef = useRef(null)
+
+  const cardWidth = 350 // Fixed width of each card (min-w-[350px])
+  const visibleCards = 1 // Number of cards visible at a time
+  const maxIndex = vehicleTypes.length - visibleCards
 
   const handleCardClick = (index) => {
     if (index !== currentIndex && !isTransitioning) {
@@ -68,17 +72,17 @@ export default function TaxiServiceSection() {
   }
 
   const handlePrevious = () => {
-    if (!isTransitioning) {
+    if (currentIndex > 0 && !isTransitioning) {
       setIsTransitioning(true)
-      setCurrentIndex((prev) => (prev === 0 ? vehicleTypes.length - 1 : prev - 1))
+      setCurrentIndex((prev) => prev - 1)
       setTimeout(() => setIsTransitioning(false), 300)
     }
   }
 
   const handleNext = () => {
-    if (!isTransitioning) {
+    if (currentIndex < maxIndex && !isTransitioning) {
       setIsTransitioning(true)
-      setCurrentIndex((prev) => (prev === vehicleTypes.length - 1 ? 0 : prev + 1))
+      setCurrentIndex((prev) => prev + 1)
       setTimeout(() => setIsTransitioning(false), 300)
     }
   }
@@ -86,44 +90,55 @@ export default function TaxiServiceSection() {
   const currentVehicle = vehicleTypes[currentIndex]
 
   return (
-    <div className="w-full relative  py-8 ">
+    <div className="w-full relative py-8">
       <div className="text-center mb-8 mt-[60px]">
-
-        <h1 className="text-[70px] font-bold">Our Vehicle <span className="text-[#4d2d7c] text-center ">Captain</span>  Fleet</h1>
+        <h1 className="text-[70px] font-bold">
+          Our Vehicle <span className="text-[#4d2d7c] text-center">Captain</span> Fleet
+        </h1>
       </div>
-      <div className="max-w-[85%]  mx-auto">
+      <div className="max-w-[85%] mx-auto">
         {/* Vehicle Type Cards */}
         <div className="flex items-center justify-between mb-8">
-          <div className="flex gap-2 md:gap-4 flex-1 overflow-x-auto pb-2">
-            {vehicleTypes.map((vehicle, index) => (
-              <div
-                key={vehicle.id}
-                onClick={() => handleCardClick(index)}
-                className={`
-                  flex items-center justify-between gap-2 px-6 py-2 rounded-[10px] border border-gray-200 cursor-pointer transition-all duration-300
-                  ${index === currentIndex ? "bg-[#ececec] shadow-md !border !border-[#2c0c5c] " : "bg-white"}
-                  min-w-[350px] 
-                `}
-              >
-                <span className=" text-[22px] font-semibold text-black whitespace-nowrap">{vehicle.name}</span>
-                <img src={vehicle.image || "/placeholder.svg"} alt={vehicle.name} className=" h-[58px] w-[149px] object-contain" />
-              </div>
-            ))}
+          <div className="flex-1 overflow-hidden">
+            <div
+              ref={containerRef}
+              className="flex gap-2 md:gap-4 transition-transform duration-300 ease-in-out"
+              style={{ transform: `translateX(-${currentIndex * cardWidth}px)` }}
+            >
+              {vehicleTypes.map((vehicle, index) => (
+                <div
+                  key={vehicle.id}
+                  onClick={() => handleCardClick(index)}
+                  className={`
+                    flex items-center justify-between gap-2 px-6 py-2 rounded-[10px] border border-gray-200 cursor-pointer
+                    ${index === currentIndex ? "bg-[#ececec] shadow-md !border-[#2c0c5c]" : "bg-white"}
+                    min-w-[350px] flex-shrink-0
+                  `}
+                >
+                  <span className="text-[22px] font-semibold text-black whitespace-nowrap">{vehicle.name}</span>
+                  <img
+                    src={vehicle.image || "/placeholder.svg"}
+                    alt={vehicle.name}
+                    className="h-[58px] w-[149px] object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Navigation Arrows */}
           <div className="flex gap-4 ml-4">
             <button
               onClick={handlePrevious}
-              className="w-12 h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
-              disabled={isTransitioning}
+              className="w-12 h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50"
+              disabled={isTransitioning || currentIndex === 0}
             >
               <ChevronLeft className="w-7 h-7 text-black" />
             </button>
             <button
               onClick={handleNext}
-              className="w-12 h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
-              disabled={isTransitioning}
+              className="w-12 h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50"
+              disabled={isTransitioning || currentIndex >= maxIndex}
             >
               <ChevronRight className="w-7 h-7 text-black" />
             </button>
@@ -135,7 +150,9 @@ export default function TaxiServiceSection() {
           <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-center">
             {/* Left Content */}
             <div
-              className={`transition-all duration-300 ${isTransitioning ? "opacity-0 translate-x-4" : "opacity-100 translate-x-0"}`}
+              className={`transition-all duration-300 ${
+                isTransitioning ? "opacity-0 translate-x-4" : "opacity-100 translate-x-0"
+              }`}
             >
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 mb-1 sm:mb-2">
                 {currentVehicle.title}
@@ -144,19 +161,16 @@ export default function TaxiServiceSection() {
                 {currentVehicle.subtitle}
               </h2>
 
-              <p className="text-sm sm:text-base md:text-lg lg:text-[30px] text-[#2B0B3D]  mb-4 sm:mb-6 lg:mb-8 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-[30px] text-[#2B0B3D] mb-4 sm:mb-6 lg:mb-8 leading-relaxed">
                 {currentVehicle.description}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
-                <button
-                  className="bg-[#4d2d7c] cursor-pointer text-white rounded-lg py-[10px] text-[120%] font-semibold   w-[50%] "
-                >
+                <button className="bg-[#4d2d7c] cursor-pointer text-white rounded-lg py-[10px] text-[120%] font-semibold w-[50%]">
                   {currentVehicle.primaryButton}
                 </button>
                 <button
-                  variant="outline"
-                  className="border border-[#4d2d7c] cursor-pointer text-[#4d2d7c]  py-[10px] text-[120%] font-semibold rounded-lg w-[50%] "
+                  className="border border-[#4d2d7c] cursor-pointer text-[#4d2d7c] py-[10px] text-[120%] font-semibold rounded-lg w-[50%]"
                 >
                   {currentVehicle.secondaryButton}
                 </button>
@@ -166,8 +180,8 @@ export default function TaxiServiceSection() {
               <div className="flex gap-3 sm:gap-4">
                 <button
                   onClick={handlePrevious}
-                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
-                  disabled={isTransitioning}
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50"
+                  disabled={isTransitioning || currentIndex === 0}
                 >
                   <svg
                     className="w-5 h-5 sm:w-7 sm:h-7 text-black"
@@ -176,18 +190,13 @@ export default function TaxiServiceSection() {
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M15 19l-7-7 7-7"
-                    />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
                 <button
                   onClick={handleNext}
-                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
-                  disabled={isTransitioning}
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50"
+                  disabled={isTransitioning || currentIndex >= maxIndex}
                 >
                   <svg
                     className="w-5 h-5 sm:w-7 sm:h-7 text-black"
@@ -196,12 +205,7 @@ export default function TaxiServiceSection() {
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 5l7 7-7 7"
-                    />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
               </div>
@@ -209,7 +213,9 @@ export default function TaxiServiceSection() {
 
             {/* Right Image */}
             <div
-              className={`transition-all duration-300 ${isTransitioning ? "opacity-0 translate-x-4" : "opacity-100 translate-x-0"}`}
+              className={`transition-all duration-300 ${
+                isTransitioning ? "opacity-0 translate-x-4" : "opacity-100 translate-x-0"
+              }`}
             >
               <div className="relative">
                 <img
@@ -222,11 +228,11 @@ export default function TaxiServiceSection() {
           </div>
         </div>
       </div>
-      <div className=" z-10  mt-[-60px]">
+      <div className="z-10 mt-[-60px]">
         <img
           src="assets/fonts/2796af52-911d-43b9-b649-c6614aafacfd (1).jfif"
           alt="Taxi Service"
-          className="w-full h-auto   object-cover"
+          className="w-full h-auto object-cover"
         />
       </div>
     </div>
