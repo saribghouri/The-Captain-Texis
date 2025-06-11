@@ -56,7 +56,7 @@ const vehicleTypes = [
 ]
 
 export default function TaxiServiceSection() {
-  const [currentIndex, setCurrentIndex] = useState(2) // Start with Airport Shuttle selected
+  const [currentIndex, setCurrentIndex] = useState(2)
   const [isTransitioning, setIsTransitioning] = useState(false)
 
   const handleCardClick = (index) => {
@@ -102,11 +102,11 @@ export default function TaxiServiceSection() {
                 className={`
                   flex items-center justify-between gap-2 px-6 py-2 rounded-[10px] border border-gray-200 cursor-pointer transition-all duration-300
                   ${index === currentIndex ? "bg-[#ececec] shadow-md !border !border-[#2c0c5c] " : "bg-white"}
-                  min-w-[360px] 
+                  min-w-[350px] 
                 `}
               >
                 <span className=" text-[22px] font-semibold text-black whitespace-nowrap">{vehicle.name}</span>
-                <img src={vehicle.image || "/placeholder.svg"} alt={vehicle.name} className=" h-[58px] object-contain" />
+                <img src={vehicle.image || "/placeholder.svg"} alt={vehicle.name} className=" h-[58px] w-[149px] object-contain" />
               </div>
             ))}
           </div>
