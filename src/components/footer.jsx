@@ -84,7 +84,7 @@ const Footer = () => {
 
               <Link
                 href="#"
-                className="inline-block mt-8 !bg-[#4d2d7c]  text-white font-bold py-3 px-12 rounded-md transition-colors"
+                className="inline-block mt-8 !bg-[#4d2d7c] group transform transition-all duration-300 hover:scale-105 hover:shadow-xl  text-white font-bold py-3 px-12 rounded-md "
               >
                 Book Now
               </Link>
@@ -184,16 +184,16 @@ const Footer = () => {
           <p className="text-black text-sm">Copyright © 2024 The Captain Taxis | All</p>
 
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <Link href="#" className="bg-purple-900 p-2 rounded-md hover:bg-purple-900 transition-colors">
+            <Link href="#" className="bg-purple-900 p-2 rounded-md group transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-purple-900 ">
               <Facebook className="text-white w-5 h-5" />
             </Link>
-            <Link href="#" className="bg-purple-900 p-2 rounded-md hover:bg-purple-900 transition-colors">
+            <Link href="#" className="bg-purple-900 p-2 rounded-md hover:bg-purple-900 group transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
               <Instagram className="text-white w-5 h-5" />
             </Link>
-            <Link href="#" className="bg-purple-900 p-2 rounded-md hover:bg-purple-900 transition-colors">
+            <Link href="#" className="bg-purple-900 p-2 rounded-md hover:bg-purple-900 group transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
               <Twitter className="text-white w-5 h-5" />
             </Link>
-            <Link href="#" className="bg-purple-900 p-2 rounded-md hover:bg-purple-900 transition-colors">
+            <Link href="#" className="bg-purple-900 p-2 rounded-md hover:bg-purple-900group transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
               <Linkedin className="text-white w-5 h-5" />
             </Link>
           </div>

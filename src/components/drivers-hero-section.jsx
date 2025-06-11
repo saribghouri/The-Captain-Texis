@@ -25,14 +25,14 @@ const DriversHeroSection = () => {
             </p>
 
             <div className="mb-8 mt-[80px]">
-              <button className="bg-white text-[#4d2d7c] font-bold drivers-shadow text-base sm:text-lg lg:text-xl px-6 sm:px-8 py-2 sm:py-3 rounded-[10px] hover:bg-[#4d2d7c] hover:text-[#ffffff]  transition-colors">
+              <button className="bg-white cursor-pointer text-[#4d2d7c] font-bold drivers-shadow text-base sm:text-lg lg:text-xl px-6 sm:px-8 py-2 sm:py-3 rounded-[10px] hover:bg-[#4d2d7c] hover:text-[#ffffff]  transition-colors">
                 Apply Now
               </button>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-[80px] lg:justify-start">
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <div className="bg-black flex items-center px-4 py-2 rounded-md cursor-pointer transition-colors hover:bg-gray-800">
+                <div className="bg-black flex items-center px-4 py-2 rounded-md cursor-pointer  group transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
                   <img
                     className="w-6 h-6 sm:w-7 sm:h-7 mr-3"
                     src="assets/images/hd-google-play-playstore-logo-symbol-png-701751694777134cuw3jc7voo-removebg-preview.png"
@@ -44,7 +44,7 @@ const DriversHeroSection = () => {
                   </div>
                 </div>
 
-                <div className="bg-black flex items-center px-4 py-2 rounded-md cursor-pointer transition-colors hover:bg-gray-800">
+                <div className="bg-black flex items-center px-4 py-2 rounded-md cursor-pointer group transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
                   <svg className="w-6 h-6 sm:w-7 sm:h-7 mr-3" viewBox="0 0 24 24">
                     <path
                       fill="#fff"
@@ -168,10 +168,10 @@ const DriversHeroSection = () => {
               </p>
             </div>
             <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <button className="bg-[#4d2d7c] w-[80%] sm:w-[50%] text-white px-6 py-3 rounded-lg font-semibold">
+              <button className="bg-[#4d2d7c] cursor-pointer w-[80%] sm:w-[50%] group transform transition-all duration-300 hover:scale-105 hover:shadow-xl text-white px-6 py-3 rounded-lg font-semibold">
                 Drive with Captain
               </button>
-              <button className="bg-white w-[80%] sm:w-[40%] text-gray-700 px-6 py-3 rounded-lg font-semibold border border-gray-300">
+              <button className="bg-white w-[80%] cursor-pointer group transform transition-all duration-300 hover:scale-105 hover:shadow-xl sm:w-[40%] text-gray-700 px-6 py-3 rounded-lg font-semibold border border-gray-300">
                 Contact Us
               </button>
             </div>

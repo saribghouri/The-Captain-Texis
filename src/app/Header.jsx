@@ -252,10 +252,10 @@ const Header = () => {
   {/* <!-- Promotional Text with Slider --> */}
   <div className="flex-1 text-center offer lg:text-left overflow-hidden">
     <div className="flex animate-slide gap-[200px] whitespace-nowrap">
-      <span className="text-[16px] inline-block">
+      <span className="text-[20px] inline-block">
         Get 20% OFF on Your First Ride! Ride with The Captain Taxis – smooth, fast, and affordable.
       </span>
-      <span className="text-[16px] inline-block">
+      <span className="text-[20px] inline-block">
         Get 20% OFF on Your First Ride! Ride with The Captain Taxis – smooth, fast, and affordable.
       </span>
     </div>
@@ -305,7 +305,7 @@ const Header = () => {
 
             <div>
 
-              <Button className="!bg-[#4d2d7c] !text-[#ffffff] ! !px-[30px] !py-[20px] !text-[16px] rounded-2xl">Book Now</Button>
+              <Button className="!bg-[#4d2d7c] !text-[#ffffff] ! !px-[30px] !py-[20px] !text-[16px] rounded-2xl group transform transition-all duration-300 hover:scale-105 hover:shadow-xl">Book Now</Button>
             </div>
           </div>
         </div>

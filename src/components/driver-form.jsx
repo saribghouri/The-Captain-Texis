@@ -89,7 +89,7 @@ const TaxiForm = () => {
                                 Where in Australia do you intend to drive a taxi?
                             </p>
                         }
-                        rules={[{ required: true, message: 'Please select a location' }]}
+                        rules={[{  message: 'Please select a location' }]}
                     >
                         <Select
                             placeholder="Please Select"

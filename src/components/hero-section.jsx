@@ -24,20 +24,20 @@ const HeroSection = () => {
             {/* App download buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               {/* Google Play Button */}
-              <div className="bg-black flex items-center px-4 py-2 rounded-md cursor-pointer transition-colors hover:bg-gray-800">
+              <div className="bg-black flex items-center px-4 py-2 rounded-md cursor-pointer group transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-gray-800">
                 <img
                   className="w-6 h-6 sm:w-7 sm:h-7 mr-3"
                   src="assets/images/hd-google-play-playstore-logo-symbol-png-701751694777134cuw3jc7voo-removebg-preview.png"
                   alt="Google Play"
                 />
-                <div className="text-white text-left">
+                <div className="text-white text-left ">
                   <div className="text-xs sm:text-sm font-normal leading-none">GET IT ON</div>
                   <div className="text-sm sm:text-base font-semibold leading-tight">Google Play</div>
                 </div>
               </div>
 
               {/* App Store Button */}
-              <div className="bg-black flex items-center px-4 py-2 rounded-md cursor-pointer transition-colors hover:bg-gray-800">
+              <div className="bg-black flex items-center px-4 py-2 rounded-md cursor-pointer group transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-gray-800">
                 <svg className="w-6 h-6 sm:w-7 sm:h-7 mr-3" viewBox="0 0 24 24">
                   <path
                     fill="#fff"
@@ -58,12 +58,12 @@ const HeroSection = () => {
               <img className="w-[300px] " src="assets/images/RKwJVV.png" alt="" />
               <div className="flex flex-col sm:flex-row gap-4 mt-[20px]">
                 <Button
-                  className="!bg-[#482a75] !rounded-[8px] !font-bold !text-white !text-base sm:!text-lg lg:!text-xl !px-8 sm:!px-8 !py-6 sm:!py-6"
+                  className="!bg-[#482a75] group transform transition-all !duration-300 hover:scale-105 hover:shadow-xl !rounded-[8px] !font-bold !text-white !text-base sm:!text-lg lg:!text-xl !px-8 sm:!px-8 !py-6 sm:!py-6"
                 >
                   Book A Ride
                 </Button>
                 <Button
-                  className="!text-[#4d2d7c] !rounded-[8px] !font-bold !text-base sm:!text-lg lg:!text-xl !px-8 sm:!px-8 !py-6 sm:!py-6 !border-[#5b3a8b]"
+                  className="!text-[#4d2d7c] group transform transition-all duration-300 hover:scale-105 hover:shadow-xl !rounded-[8px] !font-bold !text-base sm:!text-lg lg:!text-xl !px-8 sm:!px-8 !py-6 sm:!py-6 !border-[#5b3a8b]"
                 >
                   Apply to Drive
                 </Button>
