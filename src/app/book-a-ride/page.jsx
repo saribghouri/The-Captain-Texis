@@ -202,7 +202,7 @@ const page = () => {
                             className={`${selectedCar === "sedan-2" ? "border-2 border-purple-900 bg-purple-50" : "border border-gray-200 hover:border-gray-300"} rounded-lg p-1 text-center flex flex-col items-center cursor-pointer`}
                             onClick={() => handleCarSelect("sedan-2")}
                           >
-                            <img className=" h-12" src="assets/images/wheelchair.svg" alt="" />
+                            <img className=" h-12" src="assets/images/Wheelchair.svg" alt="" />
                             <div className="text-[16px] font-medium mt-[6px]">
                               {" "}
                               <span className="font-semibold">Wheelchair</span>

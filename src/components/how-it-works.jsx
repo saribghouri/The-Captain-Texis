@@ -77,9 +77,9 @@ export default function HowItWorks() {
                   </div>
 
                   <div className="text-center sections border ">
-                    <div className="w-15 h-20 mx-auto mb-8 flex items-center justify-center">
+                    <div className="w-20 h-20 mx-auto mb-8 flex items-center justify-center">
                       <img
-                        src="assets/images/Wheelchair.svg"
+                        src="assets/images/Wheelchairs (1).svg"
                         alt="Ride app mockup"
 
                         className=" rounded-2xl h-[489px] w-[863px]"
