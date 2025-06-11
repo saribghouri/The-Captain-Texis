@@ -166,11 +166,11 @@ export default function TaxiServiceSection() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
-                <button className="bg-[#4d2d7c] cursor-pointer text-white rounded-lg py-[10px] text-[120%] font-semibold w-[50%]">
+                <button className="bg-[#4d2d7c] cursor-pointer text-white rounded-lg py-[10px] text-[120%]  group transform transition-all duration-300 hover:scale-105 hover:shadow-xl font-semibold w-[50%]">
                   {currentVehicle.primaryButton}
                 </button>
                 <button
-                  className="border border-[#4d2d7c] cursor-pointer text-[#4d2d7c] py-[10px] text-[120%] font-semibold rounded-lg w-[50%]"
+                  className="border border-[#4d2d7c] cursor-pointer text-[#4d2d7c] py-[10px] text-[120%] font-semibold  group transform transition-all duration-300 hover:scale-105 hover:shadow-xl rounded-lg w-[50%]"
                 >
                   {currentVehicle.secondaryButton}
                 </button>

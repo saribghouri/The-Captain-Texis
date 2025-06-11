@@ -45,7 +45,7 @@ const WhereYouCanUse = () => {
       {/* Partners logos section */}
       <div
         className="absolute right-0 top-0 h-full  items-center pr-6 md:pr-12"
-        style={{ width: "67%" }}
+        style={{ width: "70%" }}
       >
   
          <div class="marquee_wrapper">

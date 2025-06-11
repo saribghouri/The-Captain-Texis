@@ -473,3 +473,17 @@ justify-content: center;
   display: flex;
   align-items: center;
 }
+.delayed-underline {
+          text-decoration: none;
+          text-decoration-color: transparent;
+          text-decoration-thickness: 0px;
+          text-underline-offset: 0px;
+        }
+        .delayed-underline:hover {
+          text-decoration: underline;
+          text-decoration-color: #4c1d95; /* Matches Tailwind's purple-900 */
+          text-decoration-thickness: 3px; /* Matches hover:decoration-3 */
+          text-underline-offset: 10px; /* Matches hover:underline-offset-10 */
+          transition: text-decoration 1s ease, 
+            text-decoration-thickness 1s ease ,
+        }

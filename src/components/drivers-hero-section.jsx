@@ -128,7 +128,7 @@ const DriversHeroSection = () => {
           {/* Card 1 */}
           <div className='bg-[#f4f5f7] px-6 py-4 rounded-2xl h-[45vh] flex flex-col '>
             <div className='flex justify-between '>
-              <img src="assets/images/Check Eligibility (1).svg" alt="" className='w-10 sm:w-12 object-contain' />
+              <img src="assets/images/Check Eligibility.svg" alt="" className='w-12 sm:w-18 object-contain' />
               <h1 className='text-[80px] sm:text-[100px] text-[#F0F0F0] font-extrabold'>01</h1>
             </div>
             <div className='space-y-2'>
@@ -142,7 +142,7 @@ const DriversHeroSection = () => {
           {/* Card 2 */}
           <div className='bg-[#f4f5f7] px-6 py-4 rounded-2xl h-[45vh] flex flex-col'>
             <div className='flex justify-between '>
-              <img src="assets/images/Verification  & Training.svg" alt="" className='w-10 sm:w-12 object-contain' />
+              <img src="assets/images/Verification  & Training.svg" alt="" className='w-12 sm:w-18 object-contain' />
               <h1 className='text-[80px] sm:text-[100px] text-[#F0F0F0] font-extrabold'>02</h1>
             </div>
             <div className='space-y-2'>
@@ -186,7 +186,7 @@ const DriversHeroSection = () => {
           {/* Card 3 */}
           <div className='bg-[#f4f5f7] px-6 py-4 rounded-2xl h-[45vh] flex flex-col '>
             <div className='flex justify-between  '>
-              <img src="assets/images/Complete Application.svg" alt="" className='w-10 sm:w-12 object-contain' />
+              <img src="assets/images/Complete Application.svg" alt="" className='w-12 sm:w-18 object-contain' />
               <h1 className='text-[80px] sm:text-[100px] text-[#F0F0F0] font-extrabold'>03</h1>
             </div>
             <div className='space-y-2'>
@@ -200,7 +200,7 @@ const DriversHeroSection = () => {
           {/* Card 4 */}
           <div className='bg-[#f4f5f7] px-6 py-4 rounded-2xl h-[45vh] flex flex-col '>
             <div className='flex justify-between '>
-              <img src="assets/images/Start Your First Ride!.svg" alt="" className='w-10 sm:w-12 object-contain' />
+              <img src="assets/images/Start Your First Ride!.svg" alt="" className='w-12 sm:w-18 object-contain' />
               <h1 className='text-[80px] sm:text-[100px] text-[#F0F0F0] font-extrabold'>04</h1>
             </div>
             <div className='space-y-2'>

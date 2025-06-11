@@ -271,13 +271,12 @@ const Header = () => {
               <img className="w-[120px] mr-[75px]" src="assets/images/Logo1.png" alt="" />
               <button
                 type="button"
-                className="px-5 py-1.5 rounded-md  !font-medium cursor-pointer text-[20px] hover:underline hover:decoration-purple-800 hover:decoration-2 hover:underline-offset-4  transition-colors duration-200 flex items-center gap-3" onClick={() => router.push("/")}
-              >
+className="px-5 py-1.5 rounded-md font-medium cursor-pointer text-[20px] transition-colors duration-200 flex items-center gap-3 delayed-underline hover:underline hover:decoration-purple-900 hover:decoration-3 hover:underline-offset-10"              >
                 Home
               </button>
               <button
                 type="button"
-                className="px-5 py-1.5 rounded-md  !font-medium cursor-pointer text-[20px] hover:underline hover:decoration-purple-800 hover:decoration-2 hover:underline-offset-4  transition-colors duration-200 flex items-center gap-3" onClick={() => router.push("/book-a-ride")}
+                className="px-5 py-1.5 rounded-md delayed-underline  !font-medium cursor-pointer text-[20px] hover:underline hover:decoration-purple-900 hover:decoration-3 hover:underline-offset-10  transition-colors duration-200 flex items-center gap-3" onClick={() => router.push("/book-a-ride")}
               >
                 Book A Ride
               </button>
@@ -296,7 +295,7 @@ const Header = () => {
                   placement="bottomCenter"
                   overlayClassName="w-full !px-[40px]"
                 >
-                  <button className="px-5 py-1.5 rounded-md  !font-medium cursor-pointer text-[20px] hover:underline hover:decoration-purple-800 hover:decoration-2 hover:underline-offset-4  transition-colors duration-200 flex items-center gap-3">
+                  <button className="px-5 py-1.5 rounded-md  !font-medium cursor-pointer text-[20px] hover:underline delayed-underline hover:decoration-purple-900 hover:decoration-3 hover:underline-offset-10  transition-colors duration-300 flex items-center gap-3">
                     {menu.label} <DownOutlined className="text-[15px] opacity-80" />
                   </button>
                 </Dropdown>
@@ -305,7 +304,7 @@ const Header = () => {
 
             <div>
 
-              <Button className="!bg-[#4d2d7c] !text-[#ffffff] ! !px-[30px] !py-[20px] !text-[16px] rounded-2xl group transform transition-all duration-300 hover:scale-105 hover:shadow-xl">Book Now</Button>
+              <Button className="!bg-[#4d2d7c] !text-[#ffffff] ! !px-[30px] !py-[20px] !text-[16px]  rounded-2xl group transform transition-all duration-300 hover:scale-105 hover:shadow-xl">Book Now</Button>
             </div>
           </div>
         </div>

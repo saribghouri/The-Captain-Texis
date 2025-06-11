@@ -75,45 +75,20 @@ const ServicesSection = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-12 mt-4 sm:mt-8">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#6b3fa0] flex items-center justify-center">
-                <svg
-                  className="w-5 h-5 sm:w-6 sm:h-6 text-[#6b3fa0]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0-4c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm0-4v2m0 16v2m4-14l2-2m-8 2l-2-2m10 6h2m-16 0h-2"
-                  />
-                </svg>
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full  flex items-center justify-center">
+               <img src="assets/images/Transparent Pricing.svg" alt="" />
               </div>
-              <span className="text-lg sm:text-xl font-medium text-[#432469]">
+              <span className="text-lg sm:text-[30px] font-medium text-[#432469]">
                 Transparent Pricing
               </span>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#6b3fa0] flex items-center justify-center">
-                <svg
-                  className="w-5 h-5 sm:w-6 sm:h-6 text-[#6b3fa0]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M17.657 16.243l-4.243-4.243m0 0L9.172 7.757M12 12l4.243-4.243m-9.9 9.9a6 6 0 1112 0 6 6 0 01-12 0z"
-                  />
-                </svg>
+              <div className="w-10 h-10 sm:w-10 sm:h-10 rounded-full  flex items-center justify-center">
+                           <img src="assets/images/Live Driver Tracking.svg" alt="" />
+
               </div>
-              <span className="text-lg sm:text-xl font-medium text-[#432469]">
+              <span className="text-lg sm:text-[30px] font-medium text-[#432469]">
                 Live Driver Tracking
               </span>
             </div>
