@@ -60,14 +60,14 @@ const page = () => {
   return (
     <>
       <Header />
-      <div className="flex  gap-[20px] max-h-screen  mt-[150px] px-6 ">
+      <div className="flex  gap-[20px]  mt-[150px] px-6 ">
         {/* Left side - Map */}
         <div className="flex-1 relative ">
           <GoogleMap className="rounded-2xl" pickup={pickupLocation} dropoff={dropoffLocation} />
         </div>
 
         {/* Right side - Booking Form */}
-        <div className="w-[800px] p-6 flex flex-col testomonial-shadow rounded-2xl">
+        <div className="w-[50%] p-6 flex flex-col testomonial-shadow rounded-2xl">
           {!showTripSummary ? (
             <>
               <h1 className="text-3xl font-semibold text-gray-900 mb-6">Book Your Ride</h1>
