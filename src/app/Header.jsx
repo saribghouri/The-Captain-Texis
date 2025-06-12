@@ -230,38 +230,38 @@ const Header = () => {
   return (
     <div className="fixed w-full top-0 left-0 z-50">
       {/* Top bar - Hidden on mobile */}
-      <div className="bg-[#4d2d7c] text-white   py-4 ">
-        <div className="max-w-8xl ml-[15px] mr-[15px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 text-sm">
-          {/* <!-- Contact Information --> */}
-          <div className="flex flex-col sm:flex-row items-center gap-8">
-            <div className="flex items-center gap-2">
-              <Phone className="w-15" />
-              <span className="font-semibold tracking-widest">0420 966 387</span>
-            </div>
-
-            <div className="hidden lg:block w-px h-4 bg-gray-600"></div>
-
-            <div className="flex items-center gap-2">
-              <Mail className="w-10" />
-              <span className="tracking-widest font-semibold text-[14px] text-white">Info@thecaptaintaxis.com.au</span>
-            </div>
+       <div className="bg-[#4d2d7c] text-white py-4 hidden lg:block">
+      <div className="max-w-8xl ml-[15px] mr-[15px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 text-sm">
+        {/* Contact Information */}
+        <div className="flex flex-col sm:flex-row items-center gap-8">
+          <div className="flex items-center gap-2">
+            <Phone className="w-4 h-4" />
+            <span className="font-semibold tracking-widest">0420 966 387</span>
           </div>
 
           <div className="hidden lg:block w-px h-4 bg-gray-600"></div>
 
-          {/* <!-- Promotional Text with Slider --> */}
-          <div className="flex-1 text-center offer lg:text-left overflow-hidden">
-            <div className="flex animate-slide gap-[200px] whitespace-nowrap">
-              <span className="text-[20px] inline-block">
-                Get 20% OFF on Your First Ride! Ride with The Captain Taxis – smooth, fast, and affordable.
-              </span>
-              <span className="text-[20px] inline-block">
-                Get 20% OFF on Your First Ride! Ride with The Captain Taxis – smooth, fast, and affordable.
-              </span>
-            </div>
+          <div className="flex items-center gap-2">
+            <Mail className="w-4 h-4" />
+            <span className="tracking-widest font-semibold text-[14px] text-white">Info@thecaptaintaxis.com.au</span>
+          </div>
+        </div>
+
+        <div className="hidden lg:block w-px h-4 bg-gray-600"></div>
+
+        {/* Promotional Text with Slider */}
+        <div className="flex-1 text-center lg:text-left overflow-hidden">
+          <div className="flex animate-slide gap-[200px] whitespace-nowrap">
+            <span className="text-[20px] inline-block">
+              Get 20% OFF on Your First Ride! Ride with The Captain Taxis – smooth, fast, and affordable.
+            </span>
+            <span className="text-[20px] inline-block">
+              Get 20% OFF on Your First Ride! Ride with The Captain Taxis – smooth, fast, and affordable.
+            </span>
           </div>
         </div>
       </div>
+    </div>
       {/* Nav bar - Hidden on mobile */}
       <div className="hidden md:block bg-white  shadow-md">
         <div className=" mx-auto  md:px-8 lg:px-8 py-4">
