@@ -3,14 +3,17 @@ import Footer from "./footer"
 
 const DriversHeroSection = () => {
   return (
-    <div
-      className="relative w-full bg-contain mt-[60px] sm:mt-[80px] md:mt-[100px] bg-no-repeat overflow-hidden"
-      style={{
-        backgroundImage: "url('/assets/images/1b52fc11-447c-45f0-a09e-d27517337d4d.jfif')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <>
+      <div
+        className="relative w-full bg-contain mt-[60px] sm:mt-[80px] md:mt-[100px] bg-no-repeat overflow-hidden"
+        style={{
+          backgroundImage: "url('/assets/images/1b52fc11-447c-45f0-a09e-d27517337d4d.jfif')",
+          backgroundPosition: "center",
+          backgroundSize: "contain",
+
+        }}
+      >
+  
       <div className="relative z-10 flex flex-col items-center justify-center min-h-[80vh] sm:min-h-screen px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-[95%] sm:max-w-[90%] flex flex-col items-center lg:items-start">
           <div className="w-full text-center lg:text-left">
@@ -62,7 +65,7 @@ const DriversHeroSection = () => {
           </div>
         </div>
       </div>
-
+    </div>
       <section className="bg-white py-8 sm:py-12 md:py-16 lg:py-20">
         <div className="max-w-[95%] sm:max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-32">
@@ -136,12 +139,10 @@ const DriversHeroSection = () => {
       </section>
 
       <div className="flex flex-wrap justify-center items-start gap-6 sm:gap-8 md:gap-10 lg:gap-12 mt-[30px] sm:mt-[40px] md:mt-[50px] px-4 sm:px-6 lg:px-8">
-        {/* Left Column */}
         <div className="w-full sm:w-[48%] md:w-[45%] lg:w-[20%]  flex flex-col gap-4">
-          {/* Card 1 */}
           <div className="bg-[#f4f5f7] px-4 sm:px-6 py-4 rounded-2xl h-[40vh] sm:h-[45vh] flex flex-col">
             <div className="flex justify-between">
-              <img src="assets/images/Check Eligibility.svg" alt="" className="w-8 sm:w-10 md:w-12 object-contain" />
+              <img src="assets/images/Check Eligibility.svg" alt="" className="w-12 sm:w-10 md:w-20 object-contain" />
               <h1 className="text-[50px] sm:text-[70px] md:text-[80px] lg:text-[100px] text-[#F0F0F0] font-extrabold">
                 01
               </h1>
@@ -154,13 +155,12 @@ const DriversHeroSection = () => {
             </div>
           </div>
 
-          {/* Card 2 */}
           <div className="bg-[#f4f5f7] px-4 sm:px-6 py-4 rounded-2xl h-[40vh] sm:h-[45vh] flex flex-col">
             <div className="flex justify-between">
               <img
                 src="assets/images/Verification  & Training.svg"
                 alt=""
-                className="w-8 sm:w-10 md:w-12 object-contain"
+                className="w-12 sm:w-10 md:w-20 object-contain"
               />
               <h1 className="text-[50px] sm:text-[70px] md:text-[80px] lg:text-[100px] text-[#F0F0F0] font-extrabold">
                 02
@@ -175,7 +175,6 @@ const DriversHeroSection = () => {
           </div>
         </div>
 
-        {/* Middle Column */}
         <div className="w-full sm:w-[90%] md:w-[90%] lg:w-[30%] flex flex-col gap-4 relative z-10">
           <div className="bg-[#ffffff] rounded-2xl text-center h-auto sm:h-[45vh] px-4 sm:px-6 py-4 flex flex-col">
             <div>
@@ -202,12 +201,10 @@ const DriversHeroSection = () => {
           </div>
         </div>
 
-        {/* Right Column */}
-        <div className="w-full sm:w-[48%] md:w-[45%] lg:w-[20%] bg-white flex flex-col gap-4">
-          {/* Card 3 */}
+        <div className="w-full sm:w-[48%] md:w-[45%] lg:w-[20%]  flex flex-col gap-4">
           <div className="bg-[#f4f5f7] px-4 sm:px-6 py-4 rounded-2xl h-[40vh] sm:h-[45vh] flex flex-col">
             <div className="flex justify-between">
-              <img src="assets/images/Complete Application.svg" alt="" className="w-8 sm:w-10 md:w-12 object-contain" />
+              <img src="assets/images/Complete Application.svg" alt="" className="w-12 sm:w-10 md:w-20 object-contain" />
               <h1 className="text-[50px] sm:text-[70px] md:text-[80px] lg:text-[100px] text-[#F0F0F0] font-extrabold">
                 03
               </h1>
@@ -220,13 +217,12 @@ const DriversHeroSection = () => {
             </div>
           </div>
 
-          {/* Card 4 */}
           <div className="bg-[#f4f5f7] px-4 sm:px-6 py-4 rounded-2xl h-[40vh] sm:h-[45vh] flex flex-col">
             <div className="flex justify-between">
               <img
                 src="assets/images/Start Your First Ride!.svg"
                 alt=""
-                className="w-8 sm:w-10 md:w-12 object-contain"
+                className="w-12 sm:w-10 md:w-20 object-contain"
               />
               <h1 className="text-[50px] sm:text-[70px] md:text-[80px] lg:text-[100px] text-[#F0F0F0] font-extrabold">
                 04
@@ -246,7 +242,8 @@ const DriversHeroSection = () => {
       <div className="mt-[30px] sm:mt-[40px] md:mt-[50px]">
         <Footer />
       </div>
-    </div>
+    </>
+
   )
 }
 

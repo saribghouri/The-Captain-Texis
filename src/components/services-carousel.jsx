@@ -184,7 +184,7 @@ const ServicesSection = () => {
               <div className="flex items-center gap-3 justify-center lg:justify-start">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center flex-shrink-0">
                   <img
-                    src="/placeholder.svg?height=48&width=48"
+                    src="assets/images/Transparent Pricing (1).svg"
                     alt="Transparent pricing icon"
                     className="w-full h-full"
                   />
