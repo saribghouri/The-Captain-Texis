@@ -29,14 +29,7 @@ const App = () => {
       <Pricing />
       <ServicesCarousel />
       <WhereYouCanUse />
-      {/* <DriveWithUs /> */}
-
       <Testimonials />
-
-      {/* <AppPromotion /> */}
-
-      {/* <YourHelp /> */}
-
       <Footer />
     </div>
   );
