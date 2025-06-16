@@ -487,3 +487,265 @@ justify-content: center;
           transition: text-decoration 1s ease, 
             text-decoration-thickness 1s ease ,
         }
+
+
+
+.hero-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(77, 45, 124, 0.1), transparent);
+  animation: shimmer 4s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  50% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+/* Title Animation */
+.hero-title {
+  opacity: 0;
+  animation: titleReveal 2s ease-out forwards;
+}
+
+.title-word-1 {
+  display: inline-block;
+  animation: wordSlideIn 0.8s ease-out 0.3s forwards;
+  opacity: 0;
+  transform: translateY(50px) rotateX(90deg);
+}
+
+.title-word-2 {
+  display: inline-block;
+  animation: wordSlideIn 0.8s ease-out 0.6s forwards;
+  opacity: 0;
+  transform: translateY(50px) rotateX(90deg);
+}
+
+.title-word-3 {
+  display: inline-block;
+  animation: wordSlideIn 0.8s ease-out 0.9s forwards;
+  opacity: 0;
+  transform: translateY(50px) rotateX(90deg);
+}
+
+@keyframes titleReveal {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes wordSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+/* Subtitle Animation */
+.hero-subtitle {
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideInLeft 1s ease-out 1.2s forwards;
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Description Animation */
+.hero-description {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out 1.5s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* App Buttons Animation */
+.app-buttons {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 1.8s forwards;
+}
+
+.app-button-1 {
+  transform: translateX(-50px) scale(0.8);
+  animation: buttonSlideIn 0.6s ease-out 2s forwards;
+}
+
+.app-button-2 {
+  transform: translateX(50px) scale(0.8);
+  animation: buttonSlideIn 0.6s ease-out 2.2s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes buttonSlideIn {
+  to {
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* App Icon Rotation */
+.app-icon {
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(5deg);
+  }
+}
+
+/* CTA Section Animation */
+.cta-section {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: ctaSlideUp 1s ease-out 2.5s forwards;
+}
+
+@keyframes ctaSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* QR Code Animation */
+.qr-code {
+  animation: qrPulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(77, 45, 124, 0.3));
+}
+
+@keyframes qrPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 20px rgba(198, 194, 204, 0.3));
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 30px rgba(241, 241, 241, 0.5));
+  }
+}
+
+/* Action Buttons Animation */
+.action-buttons {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 3s forwards;
+}
+
+
+
+@keyframes flipIn {
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+/* Bottom Border Animation */
+.bottom-border {
+  width: 0;
+  animation: expandWidth 2s ease-out 3.6s forwards;
+  background: linear-gradient(90deg, #a09aa8, #c5c4c9, #b6b3bb);
+  background-size: 200% 100%;
+  animation: expandWidth 2s ease-out 3.6s forwards, gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes expandWidth {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Hover Enhancements */
+.app-button-1:hover .app-icon,
+.app-button-2:hover .app-icon {
+  animation: iconSpin 0.5s ease-in-out;
+}
+
+@keyframes iconSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.action-btn-1:hover,
+.action-btn-2:hover {
+  animation: buttonGlow 0.3s ease-in-out forwards;
+}
+
+@keyframes buttonGlow {
+  to {
+    box-shadow: 0 0 20px rgba(166, 164, 168, 0.6);
+    transform: translateY(-2px) scale(1.05);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .title-word-1,
+  .title-word-2,
+  .title-word-3 {
+    animation-duration: 0.6s;
+  }
+
+  .hero-subtitle,
+  .hero-description {
+    animation-duration: 0.8s;
+  }
+
+  .qr-code {
+    animation-duration: 1.5s;
+  }
+}
+
+/* Loading State */
+.hero-container:not(.loaded) * {
+  animation-play-state: paused;
+}
+
+.hero-container.loaded * {
+  animation-play-state: running;
+}
