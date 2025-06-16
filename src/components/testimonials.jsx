@@ -14,7 +14,7 @@ const vehicleTypes = [
       "Quick and reliable transportation for your daily commute. Our standard taxi service provides comfortable rides with professional drivers who know the city inside and out.",
     primaryButton: "Book A Standard Taxi",
     secondaryButton: "Download App The Caption Taxi",
-    contentImage: "assets/images/2.png",
+    contentImage: "assets/images/standard-taxis.png",
   },
   {
     id: "suv",
@@ -26,7 +26,7 @@ const vehicleTypes = [
       "Experience premium comfort with our spacious SUV service. Perfect for families, groups, or when you need extra space for luggage. Enjoy a smooth, luxurious ride.",
     primaryButton: "Book A SUV",
     secondaryButton: "Download App The Caption Taxi",
-    contentImage: "assets/images/3.png",
+    contentImage: "assets/images/suvser.png",
   },
   {
     id: "airport-shuttle",
@@ -50,7 +50,7 @@ const vehicleTypes = [
       "Need to transport goods or large items? Our cargo service provides reliable transportation for your freight needs. Professional drivers ensure safe and timely delivery.",
     primaryButton: "Book A Cargo Vehicle",
     secondaryButton: "Download App The Caption Taxi",
-    contentImage: "assets/images/5.png",
+    contentImage: "assets/images/cargos.jpg",
   },
 ]
 
