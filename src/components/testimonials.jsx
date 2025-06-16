@@ -194,11 +194,11 @@ export default function TaxiServiceSection() {
 
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
-                <button className="bg-[#4d2d7c] cursor-pointer text-white rounded-lg py-3 sm:py-[10px] px-4 text-sm sm:text-base lg:text-[120%] group transform transition-all duration-300 hover:scale-105 hover:shadow-xl font-semibold w-full sm:w-[50%] hover:bg-gradient-to-r hover:from-[#4d2d7c] hover:to-purple-600 relative overflow-hidden">
+                <button className="bg-[#4d2d7c] cursor-pointer text-white rounded-lg py-3 sm:py-[10px] px-4 text-sm sm:text-base lg:text-[120%] group transform transition-all duration-300 hover:scale-105 hover:shadow-xl font-semibold w-full sm:w-[50%]  relative overflow-hidden">
                   <span className="relative z-10">{currentVehicle.primaryButton}</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-[#4d2d7c] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0  opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
-                <button className="border border-[#4d2d7c] cursor-pointer text-[#4d2d7c] py-3 sm:py-[10px] px-4 text-sm sm:text-base lg:text-[120%] font-semibold group transform transition-all duration-300 hover:scale-105 hover:shadow-xl rounded-lg w-full sm:w-[50%] hover:bg-[#4d2d7c] hover:text-white relative overflow-hidden">
+                <button className="border border-[#4d2d7c] cursor-pointer text-[#4d2d7c] py-3 sm:py-[10px] px-4 text-sm sm:text-base lg:text-[120%] font-semibold group transform transition-all duration-300 hover:scale-105 hover:shadow-xl rounded-lg w-full sm:w-[50%] relative overflow-hidden">
                   <span className="relative z-10">{currentVehicle.secondaryButton}</span>
                 </button>
               </div>
