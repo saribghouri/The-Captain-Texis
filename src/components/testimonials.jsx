@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const vehicleTypes = [
@@ -57,7 +57,14 @@ const vehicleTypes = [
 export default function TaxiServiceSection() {
   const [currentIndex, setCurrentIndex] = useState(2)
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
   const containerRef = useRef(null)
+
+  // Trigger entrance animations on mount
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoaded(true), 100)
+    return () => clearTimeout(timer)
+  }, [])
 
   // Responsive card width based on screen size
   const cardWidth = 280 // Fixed width for consistent navigation
@@ -94,150 +101,105 @@ export default function TaxiServiceSection() {
   return (
     <div className="w-full relative py-4 sm:py-6 lg:py-8">
       {/* Header */}
-      <div className="text-center mb-6 sm:mb-8 mt-8 sm:mt-12 lg:mt-[60px] px-4">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[70px] font-bold leading-tight">
-          Our Vehicle <span className="text-[#4d2d7c]">Captain</span> Fleet
+      <div
+        className={`text-center mb-6 sm:mb-8 mt-8 sm:mt-12 lg:mt-[60px] px-4 transform transition-all duration-1000 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}
+      >
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[70px] font-semibold leading-tight animate-pulse">
+          Our Vehicle{" "}
+          <span className="text-[#2c0c5c] bg-clip-text">
+            Captain
+          </span>{" "}
+          Fleet
         </h1>
       </div>
 
       <div className="max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] mx-auto px-2 sm:px-4">
         {/* Vehicle Type Cards */}
-        <div className="flex items-center justify-between mb-6 sm:mb-8">
+        <div
+          className={`flex items-center justify-between mb-6 sm:mb-8 transform transition-all duration-1000 delay-300 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}
+        >
           <div className="flex-1 overflow-hidden">
             <div
               ref={containerRef}
-              className="flex gap-2 sm:gap-3 md:gap-4 transition-transform duration-300 ease-in-out"
+              className="flex gap-2 sm:gap-3 md:gap-4 transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * (280 + 16)}px)` }}
             >
               {vehicleTypes.map((vehicle, index) => (
                 <div
                   key={vehicle.id}
                   onClick={() => handleCardClick(index)}
-                  className={`
+                   className={`
                     flex items-center justify-between gap-2 sm:gap-3 px-3 sm:px-4 lg:px-6 py-2 sm:py-3 rounded-[8px] sm:rounded-[10px] border border-gray-200 cursor-pointer
                     ${index === currentIndex ? "bg-[#ececec] shadow-md !border-[#2c0c5c]" : "bg-white"}
                     min-w-[280px] lg:min-w-[350px] xl:min-w-[350px] flex-shrink-0 transition-all duration-200
                   `}
+                  style={{
+                    animationDelay: `${index * 100}ms`,
+                    animation: isLoaded ? "slideInFromLeft 0.6s ease-out forwards" : "none",
+                  }}
                 >
-                  <span className="text-base sm:text-lg lg:text-[22px] font-semibold text-black whitespace-nowrap">
+                  <span className="text-base sm:text-lg lg:text-[22px] font-semibold text-black whitespace-nowrap transition-colors duration-200">
                     {vehicle.name}
                   </span>
                   <img
                     src={vehicle.image || "/placeholder.svg"}
                     alt={vehicle.name}
-                    className="h-[40px] sm:h-[48px] lg:h-[58px] w-[100px] sm:w-[120px] lg:w-[149px] object-contain"
+                    className="h-[40px] sm:h-[48px] lg:h-[58px] w-[100px] sm:w-[120px] lg:w-[149px] object-contain transition-transform duration-300 hover:scale-110"
                   />
                 </div>
               ))}
             </div>
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/* 
-  <div className="flex-1 overflow-hidden">
-            <div
-              ref={containerRef}
-              className="flex gap-2 md:gap-4 transition-transform duration-300 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * cardWidth}px)` }}
-            >
-              {vehicleTypes.map((vehicle, index) => (
-                <div
-                  key={vehicle.id}
-                  onClick={() => handleCardClick(index)}
-                  className={`
-                    flex items-center justify-between gap-2 px-6 py-2 rounded-[10px] border border-gray-200 cursor-pointer
-                    ${index === currentIndex ? "bg-[#ececec] shadow-md !border-[#2c0c5c]" : "bg-white"}
-                    min-w-[350px] flex-shrink-0
-                  `}
-                >
-                  <span className="text-[22px] font-semibold text-black whitespace-nowrap">{vehicle.name}</span>
-                  <img
-                    src={vehicle.image || "/placeholder.svg"}
-                    alt={vehicle.name}
-                    className="h-[58px] w-[149px] object-contain"
-                  />
-                </div>
-              ))}
-            </div>
-          </div> */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
           {/* Navigation Arrows - Always visible */}
           <div className="flex gap-3 lg:gap-4 ml-4">
             <button
               onClick={handlePrevious}
-              className="w-10 h-10 lg:w-12 lg:h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50"
+              className="w-10 h-10 lg:w-12 lg:h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-all duration-300 disabled:opacity-50 hover:scale-110 hover:shadow-lg hover:border-[#4d2d7c] group"
               disabled={isTransitioning || currentIndex === 0}
             >
-              <ChevronLeft className="w-5 h-5 lg:w-7 lg:h-7 text-black" />
+              <ChevronLeft className="w-5 h-5 lg:w-7 lg:h-7 text-black group-hover:text-[#4d2d7c] transition-colors duration-200" />
             </button>
             <button
               onClick={handleNext}
-              className="w-10 h-10 lg:w-12 lg:h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50"
+              className="w-10 h-10 lg:w-12 lg:h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-all duration-300 disabled:opacity-50 hover:scale-110 hover:shadow-lg hover:border-[#4d2d7c] group"
               disabled={isTransitioning || currentIndex >= maxIndex}
             >
-              <ChevronRight className="w-5 h-5 lg:w-7 lg:h-7 text-black" />
+              <ChevronRight className="w-5 h-5 lg:w-7 lg:h-7 text-black group-hover:text-[#4d2d7c] transition-colors duration-200" />
             </button>
           </div>
         </div>
 
         {/* Main Content */}
-        <div className="bg-white relative rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 shadow-sm border border-gray-100">
+        <div
+          className={`bg-white relative rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 shadow-sm border border-gray-100 transform transition-all duration-1000 delay-500 hover:shadow-xl ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}
+        >
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
             {/* Left Content */}
             <div
-              className={`transition-all duration-300 ${
+              className={`transition-all duration-500 ${
                 isTransitioning ? "opacity-0 translate-x-4" : "opacity-100 translate-x-0"
               }`}
             >
-              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-bold text-gray-900 mb-1 sm:mb-2 leading-tight">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-bold text-gray-900 mb-1 sm:mb-2 leading-tight transform transition-all duration-700 hover:scale-105">
                 {currentVehicle.title}
               </h1>
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-bold text-purple-900 mb-4 sm:mb-6 lg:mb-8 leading-tight">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-bold text-purple-900 mb-4 sm:mb-6 lg:mb-8 leading-tight bg-gradient-to-r from-purple-900 to-[#4d2d7c] bg-clip-text text-transparent transform transition-all duration-700 hover:scale-105">
                 {currentVehicle.subtitle}
               </h2>
 
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[30px] text-[#2B0B3D] mb-4 sm:mb-6 lg:mb-8 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[30px] text-[#2B0B3D] mb-4 sm:mb-6 lg:mb-8 leading-relaxed transform transition-all duration-700 hover:text-[#4d2d7c]">
                 {currentVehicle.description}
               </p>
 
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
-                <button className="bg-[#4d2d7c] cursor-pointer text-white rounded-lg py-3 sm:py-[10px] px-4 text-sm sm:text-base lg:text-[120%] group transform transition-all duration-300 hover:scale-105 hover:shadow-xl font-semibold w-full sm:w-[50%]">
-                  {currentVehicle.primaryButton}
+                <button className="bg-[#4d2d7c] cursor-pointer text-white rounded-lg py-3 sm:py-[10px] px-4 text-sm sm:text-base lg:text-[120%] group transform transition-all duration-300 hover:scale-105 hover:shadow-xl font-semibold w-full sm:w-[50%] hover:bg-gradient-to-r hover:from-[#4d2d7c] hover:to-purple-600 relative overflow-hidden">
+                  <span className="relative z-10">{currentVehicle.primaryButton}</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-[#4d2d7c] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
-                <button className="border border-[#4d2d7c] cursor-pointer text-[#4d2d7c] py-3 sm:py-[10px] px-4 text-sm sm:text-base lg:text-[120%] font-semibold group transform transition-all duration-300 hover:scale-105 hover:shadow-xl rounded-lg w-full sm:w-[50%]">
-                  {currentVehicle.secondaryButton}
+                <button className="border border-[#4d2d7c] cursor-pointer text-[#4d2d7c] py-3 sm:py-[10px] px-4 text-sm sm:text-base lg:text-[120%] font-semibold group transform transition-all duration-300 hover:scale-105 hover:shadow-xl rounded-lg w-full sm:w-[50%] hover:bg-[#4d2d7c] hover:text-white relative overflow-hidden">
+                  <span className="relative z-10">{currentVehicle.secondaryButton}</span>
                 </button>
               </div>
 
@@ -245,33 +207,34 @@ export default function TaxiServiceSection() {
               <div className="flex gap-3 sm:gap-4">
                 <button
                   onClick={handlePrevious}
-                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-all duration-300 disabled:opacity-50 hover:scale-110 hover:shadow-lg hover:border-[#4d2d7c] group"
                   disabled={isTransitioning || currentIndex === 0}
                 >
-                  <ChevronLeft className="w-5 h-5 sm:w-7 sm:h-7 text-black" />
+                  <ChevronLeft className="w-5 h-5 sm:w-7 sm:h-7 text-black group-hover:text-[#4d2d7c] transition-colors duration-200" />
                 </button>
                 <button
                   onClick={handleNext}
-                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full cursor-pointer border border-black bg-white flex items-center justify-center hover:bg-gray-50 transition-all duration-300 disabled:opacity-50 hover:scale-110 hover:shadow-lg hover:border-[#4d2d7c] group"
                   disabled={isTransitioning || currentIndex >= maxIndex}
                 >
-                  <ChevronRight className="w-5 h-5 sm:w-7 sm:h-7 text-black" />
+                  <ChevronRight className="w-5 h-5 sm:w-7 sm:h-7 text-black group-hover:text-[#4d2d7c] transition-colors duration-200" />
                 </button>
               </div>
             </div>
 
             {/* Right Image */}
             <div
-              className={`transition-all duration-300 order-first lg:order-last ${
+              className={`transition-all duration-500 order-first lg:order-last ${
                 isTransitioning ? "opacity-0 translate-x-4" : "opacity-100 translate-x-0"
               }`}
             >
-              <div className="relative">
+              <div className="relative group">
                 <img
                   src={currentVehicle.contentImage || "/placeholder.svg"}
                   alt={currentVehicle.subtitle}
-                  className="w-full h-auto rounded-2xl sm:rounded-3xl lg:rounded-4xl"
+                  className="w-full h-auto rounded-2xl sm:rounded-3xl lg:rounded-4xl transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#4d2d7c]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl sm:rounded-3xl lg:rounded-4xl"></div>
               </div>
             </div>
           </div>
@@ -279,14 +242,36 @@ export default function TaxiServiceSection() {
       </div>
 
       {/* Bottom Background Image */}
-      <div className="z-10 mt-[-30px] sm:mt-[-40px] lg:mt-[-60px]">
-        
+          <div className="z-10 mt-[-30px] sm:mt-[-40px] lg:mt-[-60px]">
+
         <img
           src="assets/fonts/2796af52-911d-43b9-b649-c6614aafacfd (1).jfif"
           alt="Taxi Service Background"
-          className="w-full h-auto object-cover"
+          className="w-full h-auto object-cover "
         />
       </div>
+
+      <style jsx>{`
+        @keyframes slideInFromLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        
+        @keyframes pulse {
+          0%, 100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.8;
+          }
+        }
+      `}</style>
     </div>
   )
 }

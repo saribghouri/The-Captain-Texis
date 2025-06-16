@@ -1,19 +1,15 @@
-"use client";
-import React, { useState } from "react";
-import { Button, Drawer, Dropdown, Menu } from "antd";
-import {
-  MenuOutlined,
-  DownOutlined,
-  PhoneOutlined,
-  GlobalOutlined,
-} from "@ant-design/icons";
-import { useRouter } from "next/navigation";
-import { Download, Mail, Phone } from "lucide-react";
+"use client"
+import { useState, useEffect } from "react"
+import { Button, Drawer, Dropdown, Menu } from "antd"
+import { MenuOutlined, DownOutlined, PhoneOutlined } from "@ant-design/icons"
+import { useRouter, usePathname } from "next/navigation"
+import { Mail, Phone } from "lucide-react"
 
 const menuData = [
   {
     key: "whatWeOffer",
     label: "What We Offer",
+    path: "/what-we-offer",
     columns: [
       {
         heading: "Vehicles",
@@ -56,6 +52,7 @@ const menuData = [
   {
     key: "drivers",
     label: "Drivers",
+    path: "/drivers",
     columns: [
       {
         heading: "Drivers",
@@ -97,6 +94,7 @@ const menuData = [
   {
     key: "contact",
     label: "Contact",
+    path: "/contact",
     columns: [
       {
         heading: "Contact",
@@ -113,34 +111,27 @@ const MegaMenu = ({ columns, onItemClick }) => (
   <div className="absolute left-0 right-0 w-full">
     <div className="max-w-3xl mx-auto mt-6 p-3 bg-white rounded-2xl">
       <div
-        className={`grid gap-6 ${columns.length === 1
-          ? "grid-cols-1"
-          : columns.length === 2
-            ? "grid-cols-1 md:grid-cols-2"
-            : columns.length === 3
-              ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-              : columns.length === 4
-                ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
-                : "grid-cols-1"
-          }`}
+        className={`grid gap-6 ${
+          columns.length === 1
+            ? "grid-cols-1"
+            : columns.length === 2
+              ? "grid-cols-1 md:grid-cols-2"
+              : columns.length === 3
+                ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                : columns.length === 4
+                  ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+                  : "grid-cols-1"
+        }`}
       >
         {columns.map((col, i) => (
-          <div
-            key={i}
-            className={`${col.items.length === 0 ? "bg-[#3a2160]" : "bg-transparent"
-              } p-4 rounded-md`}
-          >
-            <h4
-              className={`font-bold text-lg pb-2 ${col.items.length === 0 ? "text-white" : "text-black"
-                }`}
-            >
+          <div key={i} className={`${col.items.length === 0 ? "bg-[#3a2160]" : "bg-transparent"} p-4 rounded-md`}>
+            <h4 className={`font-bold text-lg pb-2 ${col.items.length === 0 ? "text-white" : "text-black"}`}>
               {col.heading}
             </h4>
             {col.items.length === 0 ? (
               <div className="flex flex-col items-start justify-between h-[70%]">
                 <p className="text-white text-sm mb-4">
-                  It is a long established fact that a reader will be distracted
-                  by the readable content
+                  It is a long established fact that a reader will be distracted by the readable content
                 </p>
                 <button
                   onClick={() => onItemClick("/last-arrivals")}
@@ -171,15 +162,15 @@ const MegaMenu = ({ columns, onItemClick }) => (
   </div>
 )
 
-const MobileMenuSection = ({ menu, isActive, toggleMenu, onItemClick }) => (
+const MobileMenuSection = ({ menu, isActive, toggleMenu, onItemClick, activeItem }) => (
   <div className="mb-1">
     <div
-      className="flex justify-between items-center py-3 px-2 hover:bg-purple-50 cursor-pointer transition-colors"
+      className={`flex justify-between items-center py-3 px-2 hover:bg-purple-50 cursor-pointer transition-colors ${activeItem === menu.key ? "bg-purple-50" : ""}`}
       onClick={() => toggleMenu(menu.key)}
     >
       <div className="flex items-center">
         <span className="w-2 h-2 bg-purple-600 rounded-full mr-2"></span>
-        <span className="font-medium">{menu.label}</span>
+        <span className={`${activeItem === menu.key ? "font-bold" : "font-medium"}`}>{menu.label}</span>
       </div>
       <DownOutlined className={`text-xs transition-transform duration-300 ${isActive ? "rotate-180" : ""}`} />
     </div>
@@ -192,7 +183,7 @@ const MobileMenuSection = ({ menu, isActive, toggleMenu, onItemClick }) => (
               {col.items.map((item, idx) => (
                 <div
                   key={idx}
-                  className="py-2 cursor-pointer text-gray-700 hover:text-purple-700 transition-colors flex items-center"
+                  className={`py-2 cursor-pointer hover:text-purple-700 transition-colors flex items-center ${activeItem === item.path ? "text-purple-700 font-bold" : "text-gray-700"}`}
                   onClick={() => onItemClick(item.path)}
                 >
                   <span className="w-1 h-1 bg-purple-500 rounded-full mr-2 opacity-75"></span>
@@ -210,7 +201,39 @@ const MobileMenuSection = ({ menu, isActive, toggleMenu, onItemClick }) => (
 const Header = () => {
   const [visible, setVisible] = useState(false)
   const [activeMenu, setActiveMenu] = useState(null)
+  const [activeItem, setActiveItem] = useState("")
   const router = useRouter()
+  const pathname = usePathname()
+
+  // Set active item based on current path when component mounts or path changes
+  useEffect(() => {
+    if (pathname === "/") {
+      setActiveItem("home")
+    } else if (pathname === "/book-a-ride") {
+      setActiveItem("book-a-ride")
+    } else {
+      // Check if the current path matches any menu item or dropdown item
+      for (const menu of menuData) {
+        if (pathname.startsWith(menu.path)) {
+          setActiveItem(menu.key)
+          break
+        }
+
+        // Check dropdown items
+        let foundInDropdown = false
+        for (const column of menu.columns) {
+          for (const item of column.items) {
+            if (pathname === item.path) {
+              setActiveItem(menu.key)
+              foundInDropdown = true
+              break
+            }
+          }
+          if (foundInDropdown) break
+        }
+      }
+    }
+  }, [pathname])
 
   const showDrawer = () => setVisible(true)
   const onClose = () => {
@@ -223,88 +246,109 @@ const Header = () => {
     onClose()
   }
 
+  const handleNavigation = (path, item) => {
+    setActiveItem(item)
+    router.push(path)
+  }
+
   const toggleMobileMenu = (menuKey) => {
     setActiveMenu(activeMenu === menuKey ? null : menuKey)
+  }
+
+  // Style for active/selected navigation item
+  const getNavItemStyle = (item) => {
+    const baseStyle =
+      "px-5 py-1.5 rounded-md cursor-pointer text-[20px] transition-colors duration-200 flex items-center gap-3"
+
+    if (activeItem === item) {
+      return `${baseStyle} font-bold underline decoration-purple-900 decoration-3 underline-offset-10`
+    }
+
+    return `${baseStyle} font-medium hover:underline delayed-underline hover:decoration-purple-900 hover:decoration-3 hover:underline-offset-10`
   }
 
   return (
     <div className="fixed w-full top-0 left-0 z-50">
       {/* Top bar - Hidden on mobile */}
-       <div className="bg-[#4d2d7c] text-white py-4 hidden lg:block">
-      <div className="max-w-8xl ml-[15px] mr-[15px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 text-sm">
-        {/* Contact Information */}
-        <div className="flex flex-col sm:flex-row items-center gap-8">
-          <div className="flex items-center gap-2">
-            <Phone className="w-4 h-4" />
-            <span className="font-semibold tracking-widest">0420 966 387</span>
+      <div className="bg-[#4d2d7c] text-white py-4 hidden lg:block">
+        <div className="max-w-8xl ml-[15px] mr-[15px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 text-sm">
+          {/* Contact Information */}
+          <div className="flex flex-col sm:flex-row items-center gap-8">
+            <div className="flex items-center gap-2">
+              <Phone className="w-4 h-4" />
+              <span className="font-semibold tracking-widest">0420 966 387</span>
+            </div>
+
+            <div className="hidden lg:block w-px h-4 bg-gray-600"></div>
+
+            <div className="flex items-center gap-2">
+              <Mail className="w-4 h-4" />
+              <span className="tracking-widest font-semibold text-[14px] text-white">Info@thecaptaintaxis.com.au</span>
+            </div>
           </div>
 
           <div className="hidden lg:block w-px h-4 bg-gray-600"></div>
 
-          <div className="flex items-center gap-2">
-            <Mail className="w-4 h-4" />
-            <span className="tracking-widest font-semibold text-[14px] text-white">Info@thecaptaintaxis.com.au</span>
-          </div>
-        </div>
-
-        <div className="hidden lg:block w-px h-4 bg-gray-600"></div>
-
-        {/* Promotional Text with Slider */}
-        <div className="flex-1 text-center lg:text-left overflow-hidden">
-          <div className="flex animate-slide gap-[200px] whitespace-nowrap">
-            <span className="text-[20px] inline-block">
-              Get 20% OFF on Your First Ride! Ride with The Captain Taxis – smooth, fast, and affordable.
-            </span>
-            <span className="text-[20px] inline-block">
-              Get 20% OFF on Your First Ride! Ride with The Captain Taxis – smooth, fast, and affordable.
-            </span>
+          {/* Promotional Text with Slider */}
+          <div className="flex-1 text-center lg:text-left overflow-hidden">
+            <div className="flex animate-slide gap-[200px] whitespace-nowrap">
+              <span className="text-[20px] inline-block">
+                Get 20% OFF on Your First Ride! Ride with The Captain Taxis – smooth, fast, and affordable.
+              </span>
+              <span className="text-[20px] inline-block">
+                Get 20% OFF on Your First Ride! Ride with The Captain Taxis – smooth, fast, and affordable.
+              </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
       {/* Nav bar - Hidden on mobile */}
-      <div className="hidden md:block bg-white  shadow-md">
-        <div className=" mx-auto  md:px-8 lg:px-8 py-4">
-          <div className="flex w-full  justify-between ">
+      <div className="hidden md:block bg-white shadow-md">
+        <div className="mx-auto md:px-8 lg:px-8 py-4">
+          <div className="flex w-full justify-between">
             {/* Left side navigation */}
             <div className="flex items-center space-x-1">
               <img className="w-[120px] mr-[75px]" src="assets/images/Logo1.png" alt="" />
-              <button
-                type="button"
-                className="px-5 py-1.5 rounded-md font-medium cursor-pointer text-[20px] transition-colors duration-200 flex items-center gap-3 delayed-underline hover:underline hover:decoration-purple-900 hover:decoration-3 hover:underline-offset-10"  onClick={() => router.push("/")}             >
+              <button type="button" className={getNavItemStyle("home")} onClick={() => handleNavigation("/", "home")}>
                 Home
               </button>
               <button
                 type="button"
-                className="px-5 py-1.5 rounded-md delayed-underline  !font-medium cursor-pointer text-[20px] hover:underline hover:decoration-purple-900 hover:decoration-3 hover:underline-offset-10  transition-colors duration-200 flex items-center gap-3" onClick={() => router.push("/book-a-ride")}
+                className={getNavItemStyle("book-a-ride")}
+                onClick={() => handleNavigation("/book-a-ride", "book-a-ride")}
               >
                 Book A Ride
               </button>
-
+            
 
               {menuData.map((menu) => (
                 <Dropdown
                   key={menu.key}
-                  overlay={
-                    <MegaMenu
-                      columns={menu.columns}
-                      onItemClick={handleItemClick}
-                    />
-                  }
+                  overlay={<MegaMenu columns={menu.columns} onItemClick={handleItemClick} />}
                   trigger={["hover"]}
                   placement="bottomCenter"
                   overlayClassName="w-full !px-[40px]"
                 >
-                  <button className="px-5 py-1.5 rounded-md  !font-medium cursor-pointer text-[20px] hover:underline delayed-underline hover:decoration-purple-900 hover:decoration-3 hover:underline-offset-10  transition-colors duration-300 flex items-center gap-3">
+                  <button
+                    className={
+                      activeItem === menu.key
+                        ? "px-5 py-1.5 rounded-md font-bold cursor-pointer text-[20px] underline decoration-purple-900 decoration-3 underline-offset-10 transition-colors duration-300 flex items-center gap-3"
+                        : "px-5 py-1.5 rounded-md font-medium cursor-pointer text-[20px] hover:underline delayed-underline hover:decoration-purple-900 hover:decoration-3 hover:underline-offset-10 transition-colors duration-300 flex items-center gap-3"
+                    }
+                    onClick={() => handleNavigation(menu.path, menu.key)}
+                  >
                     {menu.label} <DownOutlined className="text-[15px] opacity-80" />
                   </button>
+                  
                 </Dropdown>
               ))}
+              
             </div>
 
             <div>
-
-              <Button className="!bg-[#4d2d7c] !text-[#ffffff] ! !px-[30px] !py-[20px] !text-[16px]  rounded-2xl group transform transition-all duration-300 hover:scale-105 hover:shadow-xl">Book Now</Button>
+              <Button className="!bg-[#4d2d7c] !text-[#ffffff] !px-[30px] !py-[20px] !text-[16px] rounded-2xl group transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                Book Now
+              </Button>
             </div>
           </div>
         </div>
@@ -338,16 +382,16 @@ const Header = () => {
         <div className="flex flex-col">
           <Button
             type="text"
-            onClick={() => handleItemClick("/")}
-            className="text-left py-3 px-2 mb-1 hover:bg-purple-50 hover:text-purple-700 transition-colors flex items-center"
+            onClick={() => handleNavigation("/", "home")}
+            className={`text-left py-3 px-2 mb-1 hover:bg-purple-50 hover:text-purple-700 transition-colors flex items-center ${activeItem === "home" ? "bg-purple-50 text-purple-700 font-bold" : ""}`}
           >
             <span className="w-2 h-2 bg-purple-600 rounded-full mr-2"></span>
             Home
           </Button>
           <Button
             type="text"
-            onClick={() => handleItemClick("/book-ride")}
-            className="text-left py-3 px-2 mb-1 hover:bg-purple-50 hover:text-purple-700 transition-colors flex items-center"
+            onClick={() => handleNavigation("/book-a-ride", "book-a-ride")}
+            className={`text-left py-3 px-2 mb-1 hover:bg-purple-50 hover:text-purple-700 transition-colors flex items-center ${activeItem === "book-a-ride" ? "bg-purple-50 text-purple-700 font-bold" : ""}`}
           >
             <span className="w-2 h-2 bg-purple-600 rounded-full mr-2"></span>
             Book a Ride
@@ -358,7 +402,8 @@ const Header = () => {
               menu={menu}
               isActive={activeMenu === menu.key}
               toggleMenu={toggleMobileMenu}
-              onItemClick={handleItemClick}
+              onItemClick={(path) => handleNavigation(path, menu.key)}
+              activeItem={activeItem}
             />
           ))}
           <div className="mt-4 pt-4 border-t border-gray-200">

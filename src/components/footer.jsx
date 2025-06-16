@@ -215,8 +215,8 @@ const Footer = () => {
     <footer className="relative w-full overflow-hidden mt-5 lg:mt-[20px]">
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-50/30 via-transparent to-purple-50/20"></div>
-        <div className="absolute inset-0 bg-grey-900/50 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white"></div>
+        <div className="absolute inset-0 bg-[#b8b8b8] z-4"></div>
         <Image
           src="/assets/images/hero-section-background.png"
           alt="City background"

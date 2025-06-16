@@ -22,7 +22,7 @@ const HeroSection = () => {
             </p>
 
             {/* App download buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-row sm:flex-row gap-4 justify-center lg:justify-start">
               {/* Google Play Button */}
               <div className="bg-black flex items-center px-4 py-2 rounded-md cursor-pointer group transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-gray-800">
                 <img
@@ -56,7 +56,7 @@ const HeroSection = () => {
               <h2 className="text-2xl  sm:text-3xl lg:text-4xl  text-[#4d2d7c] font-bold font-sans">
               </h2>
               <img className="w-[300px] " src="assets/images/RKwJVV.png" alt="" />
-              <div className="flex flex-col sm:flex-row gap-4 mt-[20px]">
+              <div className="flex flex-row sm:flex-row gap-4 mt-[20px]">
                 <Button
                   className="!bg-[#482a75] group transform transition-all !duration-300 hover:scale-105 hover:shadow-xl !rounded-[8px] !font-bold !text-white !text-base sm:!text-lg lg:!text-xl !px-8 sm:!px-8 !py-6 sm:!py-6"
                 >
