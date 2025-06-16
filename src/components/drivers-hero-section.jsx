@@ -188,7 +188,7 @@ const DriversHeroSection = () => {
 
               {/* Benefit 1 */}
               <div
-                className={`p-4 sm:p-6 md:p-8 lg:p-10 text-center transform transition-all duration-700 hover:scale-105 hover:bg-gray-50 rounded-lg ${visibleCards.includes(0) ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                className={`p-4 sm:p-6 md:p-8 lg:p-10 text-center transform transition-all duration-700 hover:scale-105  rounded-lg ${visibleCards.includes(0) ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
               >
                 <h3 className="text-xl sm:text-2xl md:text-[25px] lg:text-[30px] font-bold text-[#000000] mb-2 sm:mb-3">
                   Flexible Hours
@@ -200,7 +200,7 @@ const DriversHeroSection = () => {
 
               {/* Benefit 2 */}
               <div
-                className={`p-4 sm:p-6 md:p-8 lg:p-10 text-center transform transition-all duration-700 delay-200 hover:scale-105 hover:bg-gray-50 rounded-lg ${visibleCards.includes(1) ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                className={`p-4 sm:p-6 md:p-8 lg:p-10 text-center transform transition-all duration-700 delay-200 hover:scale-105 rounded-lg ${visibleCards.includes(1) ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
               >
                 <h3 className="text-xl sm:text-2xl md:text-[25px] lg:text-[30px] font-bold text-[#000000] mb-2 sm:mb-3">
                   Competitive Earnings
@@ -212,7 +212,7 @@ const DriversHeroSection = () => {
 
               {/* Benefit 3 */}
               <div
-                className={`p-4 sm:p-6 md:p-8 lg:p-10 text-center transform transition-all duration-700 delay-400 hover:scale-105 hover:bg-gray-50 rounded-lg ${visibleCards.includes(2) ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                className={`p-4 sm:p-6 md:p-8 lg:p-10 text-center transform transition-all duration-700 delay-400 hover:scale-105  rounded-lg ${visibleCards.includes(2) ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
               >
                 <h3 className="text-xl sm:text-2xl md:text-[25px] lg:text-[30px] font-bold text-[#000000] mb-2 sm:mb-3">
                   Easy-to-Use App
@@ -224,7 +224,7 @@ const DriversHeroSection = () => {
 
               {/* Benefit 4 */}
               <div
-                className={`p-4 sm:p-6 md:p-8 lg:p-10 text-center transform transition-all duration-700 delay-600 hover:scale-105 hover:bg-gray-50 rounded-lg ${visibleCards.includes(3) ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                className={`p-4 sm:p-6 md:p-8 lg:p-10 text-center transform transition-all duration-700 delay-600 hover:scale-105 rounded-lg ${visibleCards.includes(3) ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
               >
                 <h3 className="text-xl sm:text-2xl md:text-[25px] lg:text-[30px] font-bold text-[#000000] mb-2 sm:mb-3">
                   Safety First
