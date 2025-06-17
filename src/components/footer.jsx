@@ -215,13 +215,13 @@ const Footer = () => {
     <footer className="relative w-full overflow-hidden mt-5 lg:mt-[20px]">
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white"></div>
-        <div className="absolute inset-0 bg-[#b8b8b8] z-4"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white via- to-white"></div>
+        <div className="absolute inset-0  z-10"></div>
         <Image
           src="/assets/images/hero-section-background.png"
           alt="City background"
           fill
-          className="object-cover opacity-30"
+          className="object-cover opacity-15"
           priority
         />
       </div>
@@ -290,41 +290,29 @@ const Footer = () => {
           </div>
 
           {/* Middle section - Map */}
-          <div className="lg:col-span-4 flex items-center justify-center order-3 lg:order-2">
-            <div className="rounded-lg overflow-hidden w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[450px]">
-              <Image
-                src="/assets/images/map.png"
-                alt="Location map"
-                width={450}
-                height={450}
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-
-          {/* Right section - Links and Contact */}
-          <div className="lg:col-span-4 order-2 lg:order-3">
+          <div className="lg:col-span-4 flex mt-[20px] xl:ml-[-80px] order-3 lg:order-2">
+          <div className="flex flex-col">
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-4">
               <div className="sm:col-span-1">
-                <h3 className="text-black text-lg sm:text-xl font-bold mb-3 sm:mb-4">Quick Links</h3>
+                <h3 className="text-black text-lg sm:text-[22px] font-bold mb-3 sm:mb-4">Quick Links</h3>
                 <ul className="space-y-1 sm:space-y-2">
                   <li>
-                    <Link href="#" className="text-black hover:text-purple-600 text-sm sm:text-base transition-colors">
+                    <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
                       Home
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="text-black hover:text-purple-600 text-sm sm:text-base transition-colors">
+                    <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
                       Join as a Driver
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="text-black hover:text-purple-600 text-sm sm:text-base transition-colors">
+                    <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
                       Vehicle
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="text-black hover:text-purple-600 text-sm sm:text-base transition-colors">
+                    <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
                       Services
                     </Link>
                   </li>
@@ -332,25 +320,25 @@ const Footer = () => {
               </div>
 
               <div className="sm:col-span-1">
-                <h3 className="text-black text-lg sm:text-xl font-bold mb-3 sm:mb-4">Support Center</h3>
+                <h3 className="text-black text-lg sm:text-[22px]  font-bold mb-3 sm:mb-4">Support Center</h3>
                 <ul className="space-y-1 sm:space-y-2">
                   <li>
-                    <Link href="#" className="text-black hover:text-purple-600 text-sm sm:text-base transition-colors">
+                    <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
                       Legal Policy/Terms
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="text-black hover:text-purple-600 text-sm sm:text-base transition-colors">
+                    <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
                       Contact Us
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="text-black hover:text-purple-600 text-sm sm:text-base transition-colors">
+                    <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
                       About Us
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="text-black hover:text-purple-600 text-sm sm:text-base transition-colors">
+                    <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
                       Additional Links
                     </Link>
                   </li>
@@ -358,30 +346,54 @@ const Footer = () => {
               </div>
 
               <div className="sm:col-span-2 lg:col-span-1">
-                <h3 className="text-black text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4">CONTACTS</h3>
+                <h3 className="text-black text-lg sm:text-[22px]  font-bold mb-3 sm:mb-4">CONTACTS</h3>
                 <div className="space-y-2">
-                  <p className="text-black text-sm sm:text-base">
+                  <p className="text-[#3a3a3a] hover:text-purple-900  text-sm sm:text-[18px] font-semibold">
                     541a Burwood Road,
                     <br />
                     Belmore NSW 2192
                   </p>
-                  <p className="text-black flex items-center text-sm sm:text-base">
+                  <p className="text-[#3a3a3a] flex hover:text-purple-900  items-center text-sm sm:text-[18px] font-semibold">
                     <span className="mr-2">📞</span> 0420 966 387
                   </p>
-                  <p className="text-black flex items-center text-sm sm:text-base">
+                  <p className="text-[#3a3a3a] flex hover:text-purple-900  items-center text-sm sm:text-[18px] font-semibold">
                     <span className="mr-2">✉️</span> info@thecaptaintaxis.com.au
                   </p>
                 </div>
               </div>
+     
             </div>
 
-            <div className="mt-6 lg:mt-[40px] flex justify-center lg:justify-end">
+            <div className="mt-6 lg:mt-[80px] gap-[40px] flex ml-[-40px] justify-self-start ">
               <Image
-                src="/assets/images/car-footer.png"
+                src="/assets/images/original-01b5a989e1f2fb52771343c3b04542ef.webp"
                 alt="Taxi car illustration"
                 width={200}
                 height={120}
-                className="w-auto h-16 sm:none  sm:h-40 lg:h-44"
+                className=" h-36 sm:none  sm:h-30 lg:h-34"
+              />
+              <Image
+                src="/assets/images/imagelogo-removebg-preview.png"
+                alt="Taxi car illustration"
+                width={150}
+                height={120}
+                className=" h-36 sm:none  sm:h-30 lg:h-34"
+              />
+            </div>
+          </div>
+          </div>
+
+          {/* Right section - Links and Contact */}
+          <div className="lg:col-span-4 order-2 lg:order-3">
+       
+
+            <div className="mt-6 lg:mt-[80px] flex mr-[-40px] justify-center lg:justify-end">
+              <Image
+                src="/assets/images/car-footer.png"
+                alt="Taxi car illustration"
+                width={400}
+                height={220}
+                className="w-auto h-46 sm:none  sm:h-60 lg:h-84"
               />
             </div>
           </div>
