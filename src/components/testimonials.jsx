@@ -99,7 +99,7 @@ export default function TaxiServiceSection() {
   const currentVehicle = vehicleTypes[currentIndex]
 
   return (
-    <div className="w-full relative py-4 sm:py-6 lg:py-8">
+    <div className="w-full relative ">
       {/* Header */}
       <div
         className={`text-center mb-6 sm:mb-8 mt-8 sm:mt-12 lg:mt-[60px] px-4 transform transition-all duration-1000 ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}

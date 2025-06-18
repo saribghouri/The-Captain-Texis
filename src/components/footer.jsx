@@ -5,7 +5,7 @@ import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react"
 
 const Footer = () => {
   return (
-    <footer className="relative w-full overflow-hidden mt-5 lg:mt-[20px]">
+    <footer className="relative w-full overflow-hidden ">
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white"></div>
