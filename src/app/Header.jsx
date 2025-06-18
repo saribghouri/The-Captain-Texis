@@ -357,12 +357,12 @@ const Header = () => {
         <img
           onClick={() => router.push("/")}
           className="w-[120px] cursor-pointer"
-          src="/assets/images/Logo1.png"
+          src="/assets/images/logo.png"
           alt="Logo"
         />
         <Button
           type="text"
-          icon={<MenuOutlined className="!text-white text-xl" />}
+          icon={<MenuOutlined className="!text-white !text-[25px]" />}
           onClick={showDrawer}
           className="text-white border-none shadow-none"
         />
