@@ -1,3 +1,250 @@
+// "use client"
+// import Link from "next/link"
+// import Image from "next/image"
+// import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react"
+
+// const Footer = () => {
+//   return (
+//     <footer className="relative w-full overflow-hidden ">
+//       {/* Background image with overlay */}
+//       <div className="absolute inset-0 z-0">
+//         <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white"></div>
+//         <div className="absolute inset-0 z-10"></div>
+//         <Image
+//           src="/assets/images/hero-section-background.png"
+//           alt="City background"
+//           fill
+//           className="object-cover opacity-15"
+//           priority
+//         />
+//       </div>
+
+//       {/* Content container */}
+//       <div className="relative z-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-6 lg:py-8">
+//         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+//           {/* Left section */}
+//           <div className="lg:col-span-4 order-1 relative"> {/* Added relative for positioning context */}
+//             <div className="mb-6 lg:mb-4">
+//               <Image
+//                 src="/assets/images/Logo1.png"
+//                 alt="The Captain Taxis"
+//                 width={300}
+//                 height={80}
+//                 className="mb-2 w-auto h-12 sm:h-16 lg:h-20"
+//               />
+//               <p className="text-black text-lg sm:text-xl font-semibold">All Your Rides. One Easy App.</p>
+//             </div>
+
+//             <div className="mt-8 lg:mt-12">
+//               <h2 className="text-2xl sm:text-3xl font-bold text-black">
+//                 Book Fast. <span className="text-[#4d2d7c]">Ride Easy.</span>
+//               </h2>
+//               <h2 className="text-2xl sm:text-3xl font-bold text-black mt-2">Download the App Now!</h2>
+
+//               <p className="text-black mt-6 lg:mt-8 text-sm sm:text-base">
+//                 On the Apple Store & Google Play – Ready When You Are.
+//               </p>
+
+//               <div className="flex flex-row sm:flex-row gap-4 justify-center mt-[20px] lg:justify-start app-buttons">
+//                 {/* Google Play Button */}
+//                 <div className="bg-black flex items-center px-4 py-2 rounded-md cursor-pointer group transform transition-all duration-300 hover:scale-105 hover:shadow-xl app-button-1">
+//                   <img
+//                     className="w-6 h-6 sm:w-7 sm:h-7 mr-3 app-icon"
+//                     src="assets/images/hd-google-play-playstore-logo-symbol-png-701751694777134cuw3jc7voo-removebg-preview.png"
+//                     alt="Google Play"
+//                   />
+//                   <div className="text-white text-left">
+//                     <div className="text-xs sm:text-sm font-normal leading-none">GET IT ON</div>
+//                     <div className="text-sm sm:text-base font-semibold leading-tight">Google Play</div>
+//                   </div>
+//                 </div>
+
+//                 {/* App Store Button */}
+//                 <div className="bg-black flex items-center px-4 py-2 rounded-md cursor-pointer group transform transition-all duration-300 hover:scale-105 hover:shadow-xl app-button-2">
+//                   <svg className="w-6 h-6 sm:w-7 sm:h-7 mr-3 app-icon" viewBox="0 0 24 24">
+//                     <path
+//                       fill="#fff"
+//                       d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"
+//                     />
+//                   </svg>
+//                   <div className="text-white text-left">
+//                     <div className="text-xs sm:text-sm font-normal leading-none">Download on the</div>
+//                     <div className="text-sm sm:text-base font-semibold leading-tight">App Store</div>
+//                   </div>
+//                 </div>
+//               </div>
+
+//               {/* Original "Book Now" button for larger screens */}
+//               <Link
+//                 href="#"
+//                 className="hidden lg:inline-block mt-6 lg:mt-8 bg-[#4d2d7c] group transform transition-all duration-300 hover:scale-105 hover:shadow-xl text-white font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-md text-sm sm:text-base"
+//               >
+//                 Book Now
+//               </Link>
+
+//               {/* "Book Now" button for mobile (top right) */}
+//               <Link
+//                 href="#"
+//                 className="lg:hidden absolute top-4 right-4 inline-block mt-6 lg:mt-8 bg-[#4d2d7c] group transform transition-all duration-300 hover:scale-105 hover:shadow-xl text-white font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-md text-sm sm:text-base"
+//               >
+//                 Book Now
+//               </Link>
+//             </div>
+//           </div>
+
+//           {/* Middle section - Map */}
+//           <div className="lg:col-span-4 flex mt-[20px] xl:ml-[-80px] order-3 lg:order-2">
+//             <div className="flex flex-col">
+//               <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-4">
+//                 <div className="sm:col-span-1">
+//                   <h3 className="text-black text-lg sm:text-[22px] font-bold mb-3 sm:mb-4">Quick Links</h3>
+//                   <ul className="space-y-1 sm:space-y-2">
+//                     <li>
+//                       <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
+//                         Home
+//                       </Link>
+//                     </li>
+//                     <li>
+//                       <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
+//                         Join as a Driver
+//                       </Link>
+//                     </li>
+//                     <li>
+//                       <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
+//                         Vehicle
+//                       </Link>
+//                     </li>
+//                     <li>
+//                       <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
+//                         Services
+//                       </Link>
+//                     </li>
+//                   </ul>
+//                 </div>
+
+//                 <div className="sm:col-span-1">
+//                   <h3 className="text-black text-lg sm:text-[22px] font-bold mb-3 sm:mb-4">Support Center</h3>
+//                   <ul className="space-y-1 sm:space-y-2">
+//                     <li>
+//                       <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
+//                         Legal Policy/Terms
+//                       </Link>
+//                     </li>
+//                     <li>
+//                       <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
+//                         Contact Us
+//                       </Link>
+//                     </li>
+//                     <li>
+//                       <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
+//                         About Us
+//                       </Link>
+//                     </li>
+//                     <li>
+//                       <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
+//                         Additional Links
+//                       </Link>
+//                     </li>
+//                   </ul>
+//                 </div>
+
+//                 <div className="sm:col-span-2 lg:col-span-1">
+//                   <h3 className="text-black text-lg sm:text-[22px] font-bold mb-3 sm:mb-4">CONTACTS</h3>
+//                   <div className="space-y-2">
+//                     <p className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold">
+//                       541a Burwood Road,
+//                       <br />
+//                       Belmore NSW 2192
+//                     </p>
+//                     <p className="text-[#3a3a3a] flex hover:text-purple-900 items-center text-sm sm:text-[18px] font-semibold">
+//                       <span className="mr-2">📞</span> 0420 966 387
+//                     </p>
+//                     <p className="text-[#3a3a3a] flex hover:text-purple-900 items-center text-sm sm:text-[18px] font-semibold">
+//                       <span className="mr-2">✉️</span> info@thecaptaintaxis.com.au
+//                     </p>
+//                   </div>
+//                 </div>
+//               </div>
+
+//               <div className="mt-6 lg:mt-[80px] gap-[60px] flex ml-[-40px] items-center justify-self-start">
+//                 <Image
+//                   src="/assets/images/original-01b5a989e1f2fb52771343c3b04542ef.webp"
+//                   alt="Taxi car illustration"
+//                   width={200}
+//                   height={120}
+//                   className="h-36 sm:none sm:h-30 lg:h-34"
+//                 />
+//                 <Image
+//                   src="/assets/images/imagelogo-removebg-preview.png"
+//                   alt="Taxi car illustration"
+//                   width={150}
+//                   height={120}
+//                   className="h-36 sm:none sm:h-30 lg:h-34"
+//                 />
+//                 <Image
+//                   src="/assets/images/logodriving.png"
+//                   alt="Taxi car illustration"
+//                   width={120}
+//                   height={110}
+//                   className="h-36 sm:none sm:h-30 lg:h-30"
+//                 />
+//               </div>
+//             </div>
+//           </div>
+
+//           {/* Right section - Links and Contact */}
+//           <div className="lg:col-span-4 order-2 lg:order-3">
+//             <div className="mt-6 lg:mt-[80px] flex mr-[-40px] justify-center lg:justify-end">
+//               <Image
+//                 src="/assets/images/car-footer.png"
+//                 alt="Taxi car illustration"
+//                 width={400}
+//                 height={220}
+//                 className="w-auto h-46 sm:none sm:h-60 lg:h-84"
+//               />
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Bottom section */}
+//         <div className="mt-6 lg:mt-8 flex flex-col sm:flex-row justify-between items-center border-t border-gray-300 pt-4 gap-4">
+//           <p className="text-black text-xs sm:text-sm text-center sm:text-left">
+//             Copyright © 2024 The Captain Taxis | All Rights Reserved
+//           </p>
+
+//           <div className="flex space-x-3 sm:space-x-4">
+//             <Link
+//               href="#"
+//               className="bg-purple-900 p-2 rounded-md group transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-purple-800"
+//             >
+//               <Facebook className="text-white w-4 h-4 sm:w-5 sm:h-5" />
+//             </Link>
+//             <Link
+//               href="#"
+//               className="bg-purple-900 p-2 rounded-md hover:bg-purple-800 group transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+//             >
+//               <Instagram className="text-white w-4 h-4 sm:w-5 sm:h-5" />
+//             </Link>
+//             <Link
+//               href="#"
+//               className="bg-purple-900 p-2 rounded-md hover:bg-purple-800 group transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+//             >
+//               <Twitter className="text-white w-4 h-4 sm:w-5 sm:h-5" />
+//             </Link>
+//             <Link
+//               href="#"
+//               className="bg-purple-900 p-2 rounded-md hover:bg-purple-800 group transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+//             >
+//               <Linkedin className="text-white w-4 h-4 sm:w-5 sm:h-5" />
+//             </Link>
+//           </div>
+//         </div>
+//       </div>
+//     </footer>
+//   )
+// }
+
+// export default Footer
 "use client"
 import Link from "next/link"
 import Image from "next/image"
@@ -5,7 +252,7 @@ import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react"
 
 const Footer = () => {
   return (
-    <footer className="relative w-full overflow-hidden ">
+    <footer className="relative w-full overflow-hidden">
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white"></div>
@@ -20,214 +267,243 @@ const Footer = () => {
       </div>
 
       {/* Content container */}
-      <div className="relative z-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-6 lg:py-8">
+      <div className="relative z-20 px-4 sm:px-6 lg:px-8 xl:px-12 py-6 lg:py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
-          {/* Left section */}
-          <div className="lg:col-span-4 order-1 relative"> {/* Added relative for positioning context */}
-            <div className="mb-6 lg:mb-4">
-              <Image
-                src="/assets/images/Logo1.png"
-                alt="The Captain Taxis"
-                width={300}
-                height={80}
-                className="mb-2 w-auto h-12 sm:h-16 lg:h-20"
-              />
-              <p className="text-black text-lg sm:text-xl font-semibold">All Your Rides. One Easy App.</p>
+          {/* Left section - Brand and App Downloads */}
+          <div className="lg:col-span-4 order-1">
+            <div className="flex flex-col sm:flex-row lg:flex-col justify-between items-start">
+              <div className="mb-4 lg:mb-6">
+                <Image
+                                src="/assets/images/Logo1.png"
+
+                  alt="The Captain Taxis"
+                  width={300}
+                  height={80}
+                  className="mb-2 w-auto h-10 sm:h-12 lg:h-16 xl:h-20"
+                />
+                <p className="text-black text-base sm:text-lg lg:text-xl font-semibold">
+                  All Your Rides. One Easy App.
+                </p>
+              </div>
+
+              {/* Book Now button for mobile - top right */}
+              <Link
+                href="#"
+                className="lg:hidden bg-[#4d2d7c] text-white font-bold py-2 px-4 sm:px-6 rounded-md text-sm hover:bg-purple-800 transition-colors"
+              >
+                Book Now
+              </Link>
             </div>
 
-            <div className="mt-8 lg:mt-12">
-              <h2 className="text-2xl sm:text-3xl font-bold text-black">
+            <div className="mt-6 lg:mt-8">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black">
                 Book Fast. <span className="text-[#4d2d7c]">Ride Easy.</span>
               </h2>
-              <h2 className="text-2xl sm:text-3xl font-bold text-black mt-2">Download the App Now!</h2>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black mt-1 lg:mt-2">
+                Download the App Now!
+              </h2>
 
-              <p className="text-black mt-6 lg:mt-8 text-sm sm:text-base">
+              <p className="text-black mt-4 lg:mt-6 text-sm sm:text-base">
                 On the Apple Store & Google Play – Ready When You Are.
               </p>
 
-              <div className="flex flex-row sm:flex-row gap-4 justify-center mt-[20px] lg:justify-start app-buttons">
-                {/* Google Play Button */}
-                <div className="bg-black flex items-center px-4 py-2 rounded-md cursor-pointer group transform transition-all duration-300 hover:scale-105 hover:shadow-xl app-button-1">
-                  <img
-                    className="w-6 h-6 sm:w-7 sm:h-7 mr-3 app-icon"
-                    src="assets/images/hd-google-play-playstore-logo-symbol-png-701751694777134cuw3jc7voo-removebg-preview.png"
-                    alt="Google Play"
-                  />
-                  <div className="text-white text-left">
-                    <div className="text-xs sm:text-sm font-normal leading-none">GET IT ON</div>
-                    <div className="text-sm sm:text-base font-semibold leading-tight">Google Play</div>
-                  </div>
-                </div>
-
-                {/* App Store Button */}
-                <div className="bg-black flex items-center px-4 py-2 rounded-md cursor-pointer group transform transition-all duration-300 hover:scale-105 hover:shadow-xl app-button-2">
-                  <svg className="w-6 h-6 sm:w-7 sm:h-7 mr-3 app-icon" viewBox="0 0 24 24">
-                    <path
-                      fill="#fff"
-                      d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"
-                    />
-                  </svg>
-                  <div className="text-white text-left">
-                    <div className="text-xs sm:text-sm font-normal leading-none">Download on the</div>
-                    <div className="text-sm sm:text-base font-semibold leading-tight">App Store</div>
-                  </div>
+              {/* App download buttons */}
+              <div className="flex flex-row sm:flex-row gap-4 mt-[40px] justify-center lg:justify-start app-buttons">
+              {/* Google Play Button */}
+              <div className="bg-black flex items-center px-4 py-2 rounded-md cursor-pointer group transform transition-all duration-300 hover:scale-105 hover:shadow-xl app-button-1">
+                <img
+                  className="w-6 h-6 sm:w-7 sm:h-7 mr-3 app-icon"
+                  src="assets/images/hd-google-play-playstore-logo-symbol-png-701751694777134cuw3jc7voo-removebg-preview.png"
+                  alt="Google Play"
+                />
+                <div className="text-white text-left ">
+                  <div className="text-xs sm:text-sm font-normal leading-none">GET IT ON</div>
+                  <div className="text-sm sm:text-base font-semibold leading-tight">Google Play</div>
                 </div>
               </div>
 
-              {/* Original "Book Now" button for larger screens */}
-              <Link
-                href="#"
-                className="hidden lg:inline-block mt-6 lg:mt-8 bg-[#4d2d7c] group transform transition-all duration-300 hover:scale-105 hover:shadow-xl text-white font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-md text-sm sm:text-base"
-              >
-                Book Now
-              </Link>
+              {/* App Store Button */}
+              <div className="bg-black flex items-center px-4 py-2 rounded-md cursor-pointer group transform transition-all duration-300 hover:scale-105 hover:shadow-xl  app-button-2">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 mr-3 app-icon" viewBox="0 0 24 24">
+                  <path
+                    fill="#fff"
+                    d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"
+                  />
+                </svg>
+                <div className="text-white text-left">
+                  <div className="text-xs sm:text-sm font-normal leading-none">Download on the</div>
+                  <div className="text-sm sm:text-base font-semibold leading-tight">App Store</div>
+                </div>
+              </div>
+            </div>
 
-              {/* "Book Now" button for mobile (top right) */}
+
+              {/* Book Now button for desktop */}
               <Link
                 href="#"
-                className="lg:hidden absolute top-4 right-4 inline-block mt-6 lg:mt-8 bg-[#4d2d7c] group transform transition-all duration-300 hover:scale-105 hover:shadow-xl text-white font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-md text-sm sm:text-base"
+                className="hidden lg:inline-block mt-6 lg:mt-8 bg-[#4d2d7c] text-white font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-md text-sm sm:text-base hover:bg-purple-800 transition-colors"
               >
                 Book Now
               </Link>
             </div>
           </div>
 
-          {/* Middle section - Map */}
-          <div className="lg:col-span-4 flex mt-[20px] xl:ml-[-80px] order-3 lg:order-2">
-            <div className="flex flex-col">
-              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-4">
-                <div className="sm:col-span-1">
-                  <h3 className="text-black text-lg sm:text-[22px] font-bold mb-3 sm:mb-4">Quick Links</h3>
-                  <ul className="space-y-1 sm:space-y-2">
-                    <li>
-                      <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
-                        Join as a Driver
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
-                        Vehicle
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
-                        Services
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="sm:col-span-1">
-                  <h3 className="text-black text-lg sm:text-[22px] font-bold mb-3 sm:mb-4">Support Center</h3>
-                  <ul className="space-y-1 sm:space-y-2">
-                    <li>
-                      <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
-                        Legal Policy/Terms
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
-                        Contact Us
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
-                        About Us
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#" className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold transition-colors">
-                        Additional Links
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="sm:col-span-2 lg:col-span-1">
-                  <h3 className="text-black text-lg sm:text-[22px] font-bold mb-3 sm:mb-4">CONTACTS</h3>
-                  <div className="space-y-2">
-                    <p className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-[18px] font-semibold">
-                      541a Burwood Road,
-                      <br />
-                      Belmore NSW 2192
-                    </p>
-                    <p className="text-[#3a3a3a] flex hover:text-purple-900 items-center text-sm sm:text-[18px] font-semibold">
-                      <span className="mr-2">📞</span> 0420 966 387
-                    </p>
-                    <p className="text-[#3a3a3a] flex hover:text-purple-900 items-center text-sm sm:text-[18px] font-semibold">
-                      <span className="mr-2">✉️</span> info@thecaptaintaxis.com.au
-                    </p>
-                  </div>
-                </div>
+          {/* Middle section - Navigation Links */}
+          <div className="lg:col-span-4 order-3 lg:order-2 mt-[40px]">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-4">
+              <div>
+                <h3 className="text-black text-lg sm:text-xl font-bold mb-3 sm:mb-4">Quick Links</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <Link
+                      href="#"
+                      className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-base font-semibold transition-colors"
+                    >
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-base font-semibold transition-colors"
+                    >
+                      Join as a Driver
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-base font-semibold transition-colors"
+                    >
+                      Vehicle
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-base font-semibold transition-colors"
+                    >
+                      Services
+                    </Link>
+                  </li>
+                </ul>
               </div>
 
-              <div className="mt-6 lg:mt-[80px] gap-[40px] flex ml-[-40px] justify-self-start">
+              <div>
+                <h3 className="text-black text-lg sm:text-xl font-bold mb-3 sm:mb-4">Support Center</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <Link
+                      href="#"
+                      className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-base font-semibold transition-colors"
+                    >
+                      Legal Policy/Terms
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-base font-semibold transition-colors"
+                    >
+                      Contact Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-base font-semibold transition-colors"
+                    >
+                      About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="#"
+                      className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-base font-semibold transition-colors"
+                    >
+                      Additional Links
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="sm:col-span-2 lg:col-span-1">
+                <h3 className="text-black text-lg sm:text-xl font-bold mb-3 sm:mb-4">CONTACTS</h3>
+                <div className="space-y-2">
+                  <p className="text-[#3a3a3a] hover:text-purple-900 text-sm sm:text-base font-semibold">
+                    541a Burwood Road,
+                    <br />
+                    Belmore NSW 2192
+                  </p>
+                  <p className="text-[#3a3a3a] flex hover:text-purple-900 items-center text-sm sm:text-base font-semibold">
+                    <span className="mr-2">📞</span> 0420 966 387
+                  </p>
+                  <p className="text-[#3a3a3a] flex hover:text-purple-900 items-center text-sm sm:text-base font-semibold">
+                    <span className="mr-2">✉️</span> info@thecaptaintaxis.com.au
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Partner logos - Mobile optimized */}
+            <div className="mt-12 lg:mt-16">
+              <div className="flex flex-wrap justify-center lg:justify-start items-center ml-[-50px] gap-8 sm:gap-18">
                 <Image
                   src="/assets/images/original-01b5a989e1f2fb52771343c3b04542ef.webp"
-                  alt="Taxi car illustration"
-                  width={200}
-                  height={120}
-                  className="h-36 sm:none sm:h-30 lg:h-34"
+                  alt="Partner logo 1"
+                  width={150}
+                  height={80}
+                  className="h-16 sm:h-20 lg:h-32 w-auto"
                 />
                 <Image
                   src="/assets/images/imagelogo-removebg-preview.png"
-                  alt="Taxi car illustration"
+                  alt="Partner logo 2"
                   width={150}
-                  height={120}
-                  className="h-36 sm:none sm:h-30 lg:h-34"
+                  height={80}
+                  className="h-16 sm:h-20 lg:h-32 w-auto"
+                />
+                <Image
+                  src="/assets/images/logodriving.png"
+                  alt="Partner logo 3"
+                  width={90}
+                  height={80}
+                  className="h-16 sm:h-20 lg:h-32 w-auto"
                 />
               </div>
             </div>
           </div>
 
-          {/* Right section - Links and Contact */}
-          <div className="lg:col-span-4 order-2 lg:order-3">
-            <div className="mt-6 lg:mt-[80px] flex mr-[-40px] justify-center lg:justify-end">
+          {/* Right section - Car illustration */}
+          <div className="lg:col-span-4 order-2 lg:order-3 mt-[50px]">
+            <div className="flex justify-center lg:justify-end mt-6 lg:mt-12">
               <Image
                 src="/assets/images/car-footer.png"
                 alt="Taxi car illustration"
-                width={400}
-                height={220}
-                className="w-auto h-46 sm:none sm:h-60 lg:h-84"
+                width={350}
+                height={200}
+                className="w-full max-w-xs sm:max-w-sm lg:max-w-md xl:max-w-lg h-auto"
               />
             </div>
           </div>
         </div>
 
-        {/* Bottom section */}
-        <div className="mt-6 lg:mt-8 flex flex-col sm:flex-row justify-between items-center border-t border-gray-300 pt-4 gap-4">
+        {/* Bottom section - Copyright and Social Media */}
+        <div className="mt-8 lg:mt-12 flex flex-col sm:flex-row justify-between items-center border-t border-gray-300 pt-4 gap-4">
           <p className="text-black text-xs sm:text-sm text-center sm:text-left">
             Copyright © 2024 The Captain Taxis | All Rights Reserved
           </p>
 
           <div className="flex space-x-3 sm:space-x-4">
-            <Link
-              href="#"
-              className="bg-purple-900 p-2 rounded-md group transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-purple-800"
-            >
+            <Link href="#" className="bg-purple-900 p-2 rounded-md hover:bg-purple-800 transition-colors">
               <Facebook className="text-white w-4 h-4 sm:w-5 sm:h-5" />
             </Link>
-            <Link
-              href="#"
-              className="bg-purple-900 p-2 rounded-md hover:bg-purple-800 group transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
-            >
+            <Link href="#" className="bg-purple-900 p-2 rounded-md hover:bg-purple-800 transition-colors">
               <Instagram className="text-white w-4 h-4 sm:w-5 sm:h-5" />
             </Link>
-            <Link
-              href="#"
-              className="bg-purple-900 p-2 rounded-md hover:bg-purple-800 group transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
-            >
+            <Link href="#" className="bg-purple-900 p-2 rounded-md hover:bg-purple-800 transition-colors">
               <Twitter className="text-white w-4 h-4 sm:w-5 sm:h-5" />
             </Link>
-            <Link
-              href="#"
-              className="bg-purple-900 p-2 rounded-md hover:bg-purple-800 group transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
-            >
+            <Link href="#" className="bg-purple-900 p-2 rounded-md hover:bg-purple-800 transition-colors">
               <Linkedin className="text-white w-4 h-4 sm:w-5 sm:h-5" />
             </Link>
           </div>
